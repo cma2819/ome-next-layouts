@@ -3,11 +3,59 @@
     "type": "object",
     "additionalProperties": false,
     "properties": {
-        "setting": {
-            "someconfig": { "type": "string"}
+        "event": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": { "type": "string" },
+                "hashTag": { "type": "string" }
+            },
+            "required": [
+                "name",
+                "hashTag"
+            ]
+        },
+        "theme": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "primary": {
+                    "type": "string",
+                    "default": "#104200"
+                },
+                "secondary": {
+                    "type": "string",
+                    "default": "#222222"
+                },
+                "text": {
+                    "type": "string",
+                    "default": "#ffffff"
+                },
+                "timer": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "pause": {
+                            "type": "string",
+                            "default": "#888888"
+                        },
+                        "running": {
+                            "type": "string",
+                            "default": "#ffffff"
+                        },
+                        "finish": {
+                            "type": "string",
+                            "default": "#ff9900"
+                        }
+                    }
+                }
+            },
+            "required": [
+                "primary",
+                "secondary",
+                "text",
+                "timer"
+            ]
         }
-    },
-    "required": [
-        "someconfig"
-    ]
+    }
 }

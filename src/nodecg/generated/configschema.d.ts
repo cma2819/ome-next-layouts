@@ -6,7 +6,18 @@
  */
 
 export interface Configschema {
-	setting?: {
-		[k: string]: any;
+	event?: {
+		name: string;
+		hashTag: string;
+	};
+	theme?: {
+		primary: string;
+		secondary: string;
+		text: string;
+		timer: {
+			pause?: string;
+			running?: string;
+			finish?: string;
+		};
 	};
 }

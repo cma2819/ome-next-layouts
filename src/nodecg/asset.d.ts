@@ -1,4 +1,6 @@
-export type Assets = {
+export type Assets = Array<Asset>;
+
+export type Asset = {
   base: string;
   bundleName: string;
   category: string;
@@ -6,4 +8,4 @@ export type Assets = {
   name: string;
   sum: string;
   url: string;
-}[];
+}

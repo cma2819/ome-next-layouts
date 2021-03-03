@@ -1,7 +1,10 @@
 import { Assets } from "./asset";
+import { CurrentDatetime } from './generated';
 
 type ReplicantMap = {
-    assets: Assets
+  'assets:background': Assets;
+  'assets:logo': Assets;
+  'current-datetime': CurrentDatetime;
 };
 
 export {
