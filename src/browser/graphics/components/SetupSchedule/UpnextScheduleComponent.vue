@@ -1,106 +1,195 @@
 <template>
   <div
     v-if="runData"
-    id="run-1"
-    class="next"
+    :style="{
+      color: nodecgTheme.text,
+    }"
   >
-    <span
-      id="up-next"
-      class="label"
-    >UP NEXT:</span>
-    <div class="box game">
-      <span class="title">{{ runData.game }}</span>
-      <div class="info">
-        <div class="category">
-          <span class="label">Category: </span>{{ runData.category }}
-        </div>
-        <div class="platform">
-          <span class="label">Platform: </span>{{ runData.system }}
-        </div>
-        <div class="est"><span class="label">EST: </span>{{ runData.estimate }}</div>
-      </div>
-      <div class="info">
-        <div class="runner">
-          <span class="label">Runner: </span>{{ runners }}
+    <setup-main-bg>
+      <div>
+        <div
+          class="label"
+          :style="{
+            fontSize: '42px',
+            top: '-32px',
+            left: '32px',
+          }"
+        >
+          次のゲーム
         </div>
         <div
-          v-if="commentators"
-          class="commentator"
+          class="data jp"
+          :style="{
+            display: 'block',
+            fontSize: '28px',
+            top: '48px',
+            left: '32px',
+            height: '84px',
+            width: '630px',
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'center'
+          }"
         >
-          <span class="label">Commentator: </span>{{ commentators }}
+          <div
+            v-for="(title, idx) in titleSplits"
+            :key="idx"
+            :style="{
+              padding: '0 0.25em'
+            }"
+          >
+            {{ title }}
+          </div>
+        </div>
+        <div 
+          class="data jp game-info"
+          :style="{
+            top: '142px',
+            left: '32px',
+            width: '256px',
+            fontSize: '24px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'start',
+          }"
+        >
+          <div
+            v-if="categorySplits.length > 0"
+            :style="{
+              display: 'flex',
+              flexWrap: 'wrap',
+              width: '100%',
+              borderBottom: `4px solid ${nodecgTheme.secondary}`
+          }">
+            <div
+              v-for="(category, idx) in categorySplits"
+              :key="idx"
+              :style="{
+                padding: '0 0.25em',
+              }"
+            >
+              {{ category }}
+            </div>
+          </div>
+          <div
+            :style="{
+              margin: '0 0.25em'
+            }"
+          >{{ runData.system }}</div>
+        </div>
+        <div
+          class="label"
+          :style="{
+            fontSize: '32px',
+            top: '-40px',
+            left: '758px',
+          }"
+        >
+          予定タイム
+        </div>
+        <div
+          class="data en"
+          :style="{
+            fontSize: '64px',
+            top: '22px',
+            left: '778px',
+          }"
+        >
+          {{ runData.estimate }}
+        </div>
+        <div
+          class="data jp"
+          :style="{
+            fontSize: '28px',
+            top: '128px',
+            left: '400px',
+            height: '120px',
+            display: 'flex',
+            justifyContent: 'center',
+            flexDirection: 'column',
+          }"
+        >
+          <div
+            v-for="(runner, idx) in runners"
+            :key="idx"
+          >
+            {{ runner }}
+          </div>
+        </div>
+        <div
+          class="data jp"
+          :style="{
+            fontSize: '28px',
+            top: '128px',
+            left: '980px',
+            height: '120px',
+            display: 'flex',
+            justifyContent: 'center',
+            flexDirection: 'column',
+          }"
+        >
+          {{ commentators }}
         </div>
       </div>
-    </div>
+    </setup-main-bg>
   </div>
 </template>
 
 <style scoped>
-#up-next {
-  font-size: 2em;
+.label {
+  position: absolute;
+  font-family: Source Han Sans JP;
 }
 
-.game {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  font-size: 1.2em;
+.data {
+  position: absolute;
 }
-
-.game > * {
-  padding-left: 16px;
+.game-info > div {
+  text-align: left;
+  padding: 4px 8px;
 }
-
-.game .title {
-  display: block;
-  font-size: 1.6em;
-  font-weight: bold;
-  margin-top: -0.2em;
+.jp {
+  font-family: Source Han Sans JP;
 }
-
-.info div {
-  display: inline-block;
-  margin-right: 1em;
+.en {
+  font-family: Ubuntu Mono;
 }
-
-.next .game {
-  height: 200px;
+.splits {
+  padding: 0 0.25em;
 }
-
-.later-than-next {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.later-than-next .time {
-  font-size: 1.4em;
-  width: 160px;
-}
-
-.later-than-next .game {
-  height: 160px;
-  font-size: 100%;
-}
-
 </style>
 
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator';
+
+import SetupMainBg from '../BackGround/SetupMainBgComponent.vue';
 import { RunData } from '../../../../nodecg/external/speedcontrol/RunData';
 import { additionsModule } from '../../../plugin/additions';
+import { theme } from '../../../plugin/theme';
 
-@Component
+@Component({
+  components: {
+    SetupMainBg
+  }
+})
 export default class SetupScheduleComponent extends Vue {
   @Prop(Object)
   readonly runData!: RunData;
 
-  get runners(): string {
+  get titleSplits(): Array<string> {
+    return this.runData.game?.split(' ') || [];
+  }
+
+  get categorySplits(): Array<string> {
+    return this.runData.category?.split(' ') || [];
+  }
+
+  get runners(): Array<string> {
     return this.runData.teams.flatMap((team) => {
       return team.players.flatMap((player) => {
         return player.name;
       });
-    }).join(' / ');
+    });
   }
 
   get commentators(): string {
@@ -113,6 +202,10 @@ export default class SetupScheduleComponent extends Vue {
     }).map((commentator) => {
       return commentator.name;
     }).join(' / ');
+  }
+
+  get nodecgTheme() {
+    return theme;
   }
 }
 </script>

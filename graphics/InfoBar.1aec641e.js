@@ -56092,9 +56092,9 @@ Object.defineProperty(exports, "__esModule", {
 
 var vue_property_decorator_1 = require("vue-property-decorator");
 
-var theme_1 = require("../../../plugin/theme");
-/* global nodecg */
+var nodecg_1 = require("../../../plugin/nodecg");
 
+var theme_1 = require("../../../plugin/theme");
 
 var InfoBarCurrentTime =
 /** @class */
@@ -56105,17 +56105,28 @@ function (_super) {
     var _this = _super !== null && _super.apply(this, arguments) || this;
 
     _this.currentTime = '';
+    _this.flash = false;
     return _this;
   }
 
   InfoBarCurrentTime.prototype.created = function () {
     var _this = this;
 
-    nodecg.Replicant('current-datetime').on('change', function (newVal) {
+    nodecg_1.bundleNodecg.Replicant('current-datetime').on('change', function (newVal) {
       _this.currentTime = newVal.time;
     });
+    setInterval(function () {
+      _this.flash = !_this.flash;
+    }, 1000);
   };
 
+  Object.defineProperty(InfoBarCurrentTime.prototype, "timeString", {
+    get: function get() {
+      return this.flash ? this.currentTime.replace(':', ' ') : this.currentTime;
+    },
+    enumerable: false,
+    configurable: true
+  });
   Object.defineProperty(InfoBarCurrentTime.prototype, "nodecgTheme", {
     get: function get() {
       return theme_1.theme;
@@ -56147,13 +56158,14 @@ exports.default = InfoBarCurrentTime;
         color: _vm.nodecgTheme.text,
         width: "100%",
         height: "100%",
+        padding: "0 30px",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         font: "normal normal bold 64px 'Ubuntu Mono'"
       }
     },
-    [_vm._v("\n  " + _vm._s(_vm.currentTime) + "\n")]
+    [_vm._v("\n  " + _vm._s(_vm.timeString) + "\n")]
   )
 }
 var staticRenderFns = []
@@ -56185,7 +56197,7 @@ render._withStripped = true
         
       }
     })();
-},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","../../../plugin/theme":"../plugin/theme.ts","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"InfoBar/components/InfoBarTweetComponent.vue":[function(require,module,exports) {
+},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","../../../plugin/nodecg":"../plugin/nodecg.ts","../../../plugin/theme":"../plugin/theme.ts","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"InfoBar/components/InfoBarTweetComponent.vue":[function(require,module,exports) {
 "use strict";
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -56486,7 +56498,7 @@ exports.default = App;
             position: "absolute",
             left: "250px",
             height: "150px",
-            width: "1510px",
+            width: "1450px",
             padding: "8px 32px"
           }
         },
@@ -56515,7 +56527,7 @@ exports.default = App;
             position: "absolute",
             right: "0px",
             height: "150px",
-            width: "160px"
+            width: "220px"
           }
         },
         [_c("info-bar-current-time")],
@@ -56615,7 +56627,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56451" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50878" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

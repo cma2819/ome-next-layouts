@@ -8,7 +8,7 @@
     color: nodecgTheme.text
   }">
     <div :style="{
-      font: 'normal normal normal 36px DotGothic16',
+      font: 'normal normal normal 36px \'Source Han Sans JP\'',
       flexGrow: '2',
       display: 'flex',
       alignItems: 'center',
@@ -20,7 +20,7 @@
       display: 'flex',
       margin: '2px 0',
       textAlign: 'right',
-      font: 'normal normal normal 24px DotGothic16',
+      font: 'normal normal normal 24px \'Source Han Sans JP\'',
       justifyContent: 'flex-end',
       alignItems: 'center'
     }">

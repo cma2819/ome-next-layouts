@@ -11,12 +11,24 @@
     <upnext-schedule
       :run-data="upnextRun"
     ></upnext-schedule>
-    <ondeck-schedule
-      v-for="(run, idx) in ondeckRuns"
-      :key="run.id"
-      :run-data="run"
-      :start-in="upcomingStartIn[idx + 1]"
-    ></ondeck-schedule>
+    <div
+      :style="{
+        padding: '12px 48px',
+      }"
+    >
+      <div
+        :style="{
+          color: nodecgTheme.text,
+          font: 'normal normal normal 32px \'Source Han Sans JP\''
+        }"
+      >今後のゲーム</div>
+      <ondeck-schedule
+        v-for="(run, idx) in ondeckRuns"
+        :key="run.id"
+        :run-data="run"
+        :start-in="upcomingStartIn[idx + 1]"
+      ></ondeck-schedule>
+    </div>
   </div>
 </template>
 
@@ -28,6 +40,7 @@ import { RunData } from '../../../../nodecg/external/speedcontrol/RunData';
 import { speedcontrolModule } from '../../../plugin/speedcontrol';
 import { additionsModule } from '../../../plugin/additions';
 import { secondsToFormatted } from '../../_lib/util';
+import { theme } from '../../../plugin/theme';
 
 @Component({
   components: {
@@ -69,6 +82,10 @@ export default class SetupScheduleComponent extends Vue {
     const thirdRunStartIn = secondRunStartIn + (this.upcomingRuns[1].estimateS || 0) + (this.upcomingRuns[2].setupTimeS || 0);
     startInArray.push(secondsToFormatted(thirdRunStartIn));
     return startInArray;
+  }
+
+  get nodecgTheme() {
+    return theme;
   }
 }
 </script>

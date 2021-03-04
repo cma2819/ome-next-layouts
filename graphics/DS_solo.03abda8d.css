@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Ubuntu+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Ubuntu+Mono&display=swap');
 
 /* So the <v-app> always has a transparent background,
 otherwise it looks odd in the NodeCG dashboard panels. */
@@ -4695,6 +4695,10 @@ html {
 .c[data-v-8fdebe] {
   stroke: none;
 }
+.a[data-v-8fdebe],
+.b[data-v-8fdebe] {
+  stroke: #208200;
+}
 .mirrored[data-v-8fdebe] {
   transform: scale(-1, 1);
 }
@@ -4712,7 +4716,7 @@ html {
   font: normal normal normal 28px Ubuntu Mono;
 }
 .name[data-v-d08e17] {
-  font: normal normal normal 40px DotGothic16;
+  font: normal normal normal 40px Source Han Sans JP;
 }
 .label[data-v-d08e17] {
   font: normal normal normal 32px Ubuntu Mono;

@@ -59764,7 +59764,7 @@ exports.default = RunLabel;
         "div",
         {
           style: {
-            font: "normal normal normal 36px DotGothic16",
+            font: "normal normal normal 36px 'Source Han Sans JP'",
             flexGrow: "2",
             display: "flex",
             alignItems: "center",
@@ -59781,8 +59781,9 @@ exports.default = RunLabel;
             display: "flex",
             margin: "2px 0",
             textAlign: "right",
-            font: "normal normal normal 24px DotGothic16",
-            justifyContent: "flex-end"
+            font: "normal normal normal 24px 'Source Han Sans JP'",
+            justifyContent: "flex-end",
+            alignItems: "center"
           }
         },
         [
@@ -59841,9 +59842,7 @@ render._withStripped = true
         
       }
     })();
-},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","../../../plugin/theme":"../plugin/theme.ts","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"_statics/cu_short.svg":[function(require,module,exports) {
-module.exports = "cu_short.9aed36ad.svg";
-},{}],"components/BackGround/ShortNameplateBgComponent.vue":[function(require,module,exports) {
+},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","../../../plugin/theme":"../plugin/theme.ts","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"components/BackGround/ShortNameplateBgComponent.vue":[function(require,module,exports) {
 "use strict";
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -59889,8 +59888,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var vue_property_decorator_1 = require("vue-property-decorator");
-
-var theme_1 = require("../../../plugin/theme");
 /* global nodecg */
 
 
@@ -59900,10 +59897,7 @@ function (_super) {
   __extends(ShortNameplateBg, _super);
 
   function ShortNameplateBg() {
-    var _this = _super !== null && _super.apply(this, arguments) || this;
-
-    _this.color = theme_1.theme.secondary;
-    return _this;
+    return _super !== null && _super.apply(this, arguments) || this;
   }
 
   __decorate([vue_property_decorator_1.Prop({
@@ -59947,8 +59941,7 @@ exports.default = ShortNameplateBg;
             staticClass: "a",
             attrs: {
               x2: "421.5",
-              transform: "translate(502 101.5) rotate(180)",
-              stroke: _vm.color
+              transform: "translate(502 101.5) rotate(180)"
             }
           }),
           _vm._v(" "),
@@ -59957,8 +59950,7 @@ exports.default = ShortNameplateBg;
             attrs: {
               x1: "70",
               y1: "70",
-              transform: "translate(84 103) rotate(180)",
-              stroke: _vm.color
+              transform: "translate(84 103) rotate(180)"
             }
           }),
           _vm._v(" "),
@@ -59966,10 +59958,7 @@ exports.default = ShortNameplateBg;
             "g",
             {
               staticClass: "b",
-              attrs: {
-                transform: "translate(20 39) rotate(180)",
-                stroke: _vm.color
-              }
+              attrs: { transform: "translate(20 39) rotate(180)" }
             },
             [
               _c("circle", {
@@ -60036,7 +60025,7 @@ render._withStripped = true
       
       }
     })();
-},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","../../../plugin/theme":"../plugin/theme.ts","_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"components/Nameplate/Nameplate.vue":[function(require,module,exports) {
+},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"components/Nameplate/Nameplate.vue":[function(require,module,exports) {
 "use strict";
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -60089,8 +60078,6 @@ Object.defineProperty(exports, "__esModule", {
 
 var vue_property_decorator_1 = require("vue-property-decorator");
 
-var cu_short_svg_1 = __importDefault(require("../../_statics/cu_short.svg"));
-
 var ShortNameplateBgComponent_vue_1 = __importDefault(require("../../components/BackGround/ShortNameplateBgComponent.vue"));
 
 var theme_1 = require("../../../plugin/theme");
@@ -60104,13 +60091,6 @@ function (_super) {
     return _super !== null && _super.apply(this, arguments) || this;
   }
 
-  Object.defineProperty(Nameplate.prototype, "backgroundUri", {
-    get: function get() {
-      return cu_short_svg_1.default;
-    },
-    enumerable: false,
-    configurable: true
-  });
   Object.defineProperty(Nameplate.prototype, "nodecgTheme", {
     get: function get() {
       return theme_1.theme;
@@ -60259,7 +60239,7 @@ render._withStripped = true
       
       }
     })();
-},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","../../_statics/cu_short.svg":"_statics/cu_short.svg","../../components/BackGround/ShortNameplateBgComponent.vue":"components/BackGround/ShortNameplateBgComponent.vue","../../../plugin/theme":"../plugin/theme.ts","_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"components/Timer/Timer.vue":[function(require,module,exports) {
+},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","../../components/BackGround/ShortNameplateBgComponent.vue":"components/BackGround/ShortNameplateBgComponent.vue","../../../plugin/theme":"../plugin/theme.ts","_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"components/Timer/Timer.vue":[function(require,module,exports) {
 "use strict";
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -60370,7 +60350,7 @@ exports.default = Timer;
         height: "100%",
         border: "3px solid " + _vm.nodecgTheme.text,
         color: _vm.nodecgTheme.text,
-        padding: "20px 35px"
+        padding: "20px 35px 8px"
       }
     },
     [
@@ -60861,7 +60841,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56451" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50878" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

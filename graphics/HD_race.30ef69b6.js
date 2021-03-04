@@ -59764,7 +59764,7 @@ exports.default = RunLabel;
         "div",
         {
           style: {
-            font: "normal normal normal 36px DotGothic16",
+            font: "normal normal normal 36px 'Source Han Sans JP'",
             flexGrow: "2",
             display: "flex",
             alignItems: "center",
@@ -59781,8 +59781,9 @@ exports.default = RunLabel;
             display: "flex",
             margin: "2px 0",
             textAlign: "right",
-            font: "normal normal normal 24px DotGothic16",
-            justifyContent: "flex-end"
+            font: "normal normal normal 24px 'Source Han Sans JP'",
+            justifyContent: "flex-end",
+            alignItems: "center"
           }
         },
         [
@@ -59841,9 +59842,7 @@ render._withStripped = true
         
       }
     })();
-},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","../../../plugin/theme":"../plugin/theme.ts","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"_statics/cu_short.svg":[function(require,module,exports) {
-module.exports = "cu_short.9aed36ad.svg";
-},{}],"components/BackGround/LongNameplateBgComponent.vue":[function(require,module,exports) {
+},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","../../../plugin/theme":"../plugin/theme.ts","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"components/BackGround/LongNameplateBgComponent.vue":[function(require,module,exports) {
 "use strict";
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -59889,8 +59888,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var vue_property_decorator_1 = require("vue-property-decorator");
-
-var theme_1 = require("../../../plugin/theme");
 /* global nodecg */
 
 
@@ -59900,15 +59897,8 @@ function (_super) {
   __extends(ShortNameplateBg, _super);
 
   function ShortNameplateBg() {
-    var _this = _super !== null && _super.apply(this, arguments) || this;
-
-    _this.color = theme_1.theme.secondary;
-    return _this;
+    return _super !== null && _super.apply(this, arguments) || this;
   }
-
-  __decorate([vue_property_decorator_1.Prop({
-    default: false
-  })], ShortNameplateBg.prototype, "mirror", void 0);
 
   ShortNameplateBg = __decorate([vue_property_decorator_1.Component], ShortNameplateBg);
   return ShortNameplateBg;
@@ -59946,28 +59936,17 @@ exports.default = ShortNameplateBg;
         _c("g", { attrs: { transform: "translate(-1.5 3.536)" } }, [
           _c("path", {
             staticClass: "a",
-            attrs: {
-              d: "M851.944,0H0",
-              transform: "translate(47.556 1.5)",
-              stroke: _vm.color
-            }
+            attrs: { d: "M851.944,0H0", transform: "translate(47.556 1.5)" }
           }),
           _vm._v(" "),
           _c("path", {
             staticClass: "a",
-            attrs: {
-              d: "M0,37.185,37.185,0",
-              transform: "translate(15.313)",
-              stroke: _vm.color
-            }
+            attrs: { d: "M0,37.185,37.185,0", transform: "translate(15.313)" }
           }),
           _vm._v(" "),
           _c(
             "g",
-            {
-              staticClass: "b",
-              attrs: { transform: "translate(1.5 33)", stroke: _vm.color }
-            },
+            { staticClass: "b", attrs: { transform: "translate(1.5 33)" } },
             [
               _c("circle", {
                 staticClass: "c",
@@ -60033,7 +60012,177 @@ render._withStripped = true
       
       }
     })();
-},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","../../../plugin/theme":"../plugin/theme.ts","_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"components/Nameplate/RaceNameplate.vue":[function(require,module,exports) {
+},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"components/BackGround/LongNameplateBgReversedComponent.vue":[function(require,module,exports) {
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+var __extends = this && this.__extends || function () {
+  var _extendStatics = function extendStatics(d, b) {
+    _extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) {
+        if (b.hasOwnProperty(p)) d[p] = b[p];
+      }
+    };
+
+    return _extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    _extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+var __decorate = this && this.__decorate || function (decorators, target, key, desc) {
+  var c = arguments.length,
+      r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+      d;
+  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
+    if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+  }
+  return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var vue_property_decorator_1 = require("vue-property-decorator");
+/* global nodecg */
+
+
+var ShortNameplateBg =
+/** @class */
+function (_super) {
+  __extends(ShortNameplateBg, _super);
+
+  function ShortNameplateBg() {
+    return _super !== null && _super.apply(this, arguments) || this;
+  }
+
+  ShortNameplateBg = __decorate([vue_property_decorator_1.Component], ShortNameplateBg);
+  return ShortNameplateBg;
+}(vue_property_decorator_1.Vue);
+
+exports.default = ShortNameplateBg;
+        var $e93b75 = exports.default || module.exports;
+      
+      if (typeof $e93b75 === 'function') {
+        $e93b75 = $e93b75.options;
+      }
+    
+        /* template */
+        Object.assign($e93b75, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "svg",
+      {
+        class: {
+          mirrored: _vm.mirror
+        },
+        attrs: {
+          xmlns: "http://www.w3.org/2000/svg",
+          width: "898",
+          height: "56.536",
+          viewBox: "0 0 898 56.536",
+          transform: "scale(1, -1)"
+        }
+      },
+      [
+        _c("g", { attrs: { transform: "translate(-1.5 3.536)" } }, [
+          _c("path", {
+            staticClass: "a",
+            attrs: { d: "M851.944,0H0", transform: "translate(47.556 1.5)" }
+          }),
+          _vm._v(" "),
+          _c("path", {
+            staticClass: "a",
+            attrs: { d: "M0,37.185,37.185,0", transform: "translate(15.313)" }
+          }),
+          _vm._v(" "),
+          _c(
+            "g",
+            { staticClass: "b", attrs: { transform: "translate(1.5 33)" } },
+            [
+              _c("circle", {
+                staticClass: "c",
+                attrs: { cx: "10", cy: "10", r: "10" }
+              }),
+              _vm._v(" "),
+              _c("circle", {
+                staticClass: "d",
+                attrs: { cx: "10", cy: "10", r: "7.5" }
+              })
+            ]
+          )
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        style: {
+          position: "absolute",
+          left: "0px",
+          top: "0px",
+          width: "100%",
+          height: "100%"
+        }
+      },
+      [_vm._t("default")],
+      2
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: "data-v-e93b75",
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$e93b75', $e93b75);
+          } else {
+            api.reload('$e93b75', $e93b75);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"components/Nameplate/RaceNameplate.vue":[function(require,module,exports) {
 "use strict";
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -60086,9 +60235,9 @@ Object.defineProperty(exports, "__esModule", {
 
 var vue_property_decorator_1 = require("vue-property-decorator");
 
-var cu_short_svg_1 = __importDefault(require("../../_statics/cu_short.svg"));
-
 var LongNameplateBgComponent_vue_1 = __importDefault(require("../../components/BackGround/LongNameplateBgComponent.vue"));
+
+var LongNameplateBgReversedComponent_vue_1 = __importDefault(require("../../components/BackGround/LongNameplateBgReversedComponent.vue"));
 
 var theme_1 = require("../../../plugin/theme");
 
@@ -60101,13 +60250,6 @@ function (_super) {
     return _super !== null && _super.apply(this, arguments) || this;
   }
 
-  Object.defineProperty(RaceNameplate.prototype, "backgroundUri", {
-    get: function get() {
-      return cu_short_svg_1.default;
-    },
-    enumerable: false,
-    configurable: true
-  });
   Object.defineProperty(RaceNameplate.prototype, "nodecgTheme", {
     get: function get() {
       return theme_1.theme;
@@ -60132,7 +60274,8 @@ function (_super) {
 
   RaceNameplate = __decorate([vue_property_decorator_1.Component({
     components: {
-      LongNameplateBg: LongNameplateBgComponent_vue_1.default
+      LongNameplateBg: LongNameplateBgComponent_vue_1.default,
+      LongNameplateBgReversed: LongNameplateBgReversedComponent_vue_1.default
     }
   })], RaceNameplate);
   return RaceNameplate;
@@ -60184,93 +60327,215 @@ exports.default = RaceNameplate;
           }
         },
         [
-          _c("long-nameplate-bg", { attrs: { mirror: _vm.isRight } }, [
-            _c(
-              "div",
-              {
-                staticClass: "bg",
-                style: {
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "flex-end",
-                  width: "100%",
-                  height: "65px"
-                }
-              },
-              [
+          !_vm.isRight
+            ? _c("long-nameplate-bg", [
                 _c(
                   "div",
                   {
-                    staticClass: "info",
+                    staticClass: "bg",
                     style: {
                       display: "flex",
-                      flexDirection: "column",
                       justifyContent: "space-between",
-                      font: "normal normal normal 32px 'Ubuntu Mono'"
+                      alignItems: "flex-end",
+                      width: "100%",
+                      height: "65px"
                     }
                   },
                   [
                     _c(
-                      "transition",
-                      { attrs: { name: "social", mode: "out-in" } },
+                      "div",
+                      {
+                        staticClass: "info",
+                        style: {
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "space-between",
+                          font: "normal normal normal 32px 'Ubuntu Mono'"
+                        }
+                      },
                       [
-                        _vm.displaySocial === 0 && _vm.social.twitch
-                          ? _c(
-                              "div",
-                              { key: "twitch", staticClass: "account" },
-                              [
-                                _c("span", { staticClass: "icon" }, [
-                                  _c("i", { staticClass: "fab fa-twitch" })
-                                ]),
-                                _vm._v(" "),
-                                _c("span", [_vm._v(_vm._s(_vm.social.twitch))])
-                              ]
-                            )
-                          : _vm.displaySocial === 1 && _vm.social.nico
-                          ? _c("div", { key: "nico", staticClass: "account" }, [
-                              _c("span", [_vm._v(_vm._s(_vm.social.nico))])
-                            ])
-                          : _vm.displaySocial === 2 && _vm.social.youtube
-                          ? _c(
-                              "div",
-                              { key: "youtube", staticClass: "account" },
-                              [
-                                _c("span", { staticClass: "icon" }, [
-                                  _c("i", { staticClass: "fab fa-youtube" })
-                                ]),
-                                _vm._v(" "),
-                                _c("span", [_vm._v(_vm._s(_vm.social.youtube))])
-                              ]
-                            )
-                          : _vm.displaySocial === 3 && _vm.social.twitter
-                          ? _c(
-                              "div",
-                              { key: "twitter", staticClass: "account" },
-                              [
-                                _c("span", { staticClass: "icon" }, [
-                                  _c("i", { staticClass: "fab fa-twitter" })
-                                ]),
-                                _vm._v(" "),
-                                _c("span", [_vm._v(_vm._s(_vm.social.twitter))])
-                              ]
-                            )
-                          : _c("div", { key: "blank", staticClass: "account" })
-                      ]
+                        _c(
+                          "transition",
+                          { attrs: { name: "social", mode: "out-in" } },
+                          [
+                            _vm.displaySocial === 0 && _vm.social.twitch
+                              ? _c(
+                                  "div",
+                                  { key: "twitch", staticClass: "account" },
+                                  [
+                                    _c("span", { staticClass: "icon" }, [
+                                      _c("i", { staticClass: "fab fa-twitch" })
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("span", [
+                                      _vm._v(_vm._s(_vm.social.twitch))
+                                    ])
+                                  ]
+                                )
+                              : _vm.displaySocial === 1 && _vm.social.nico
+                              ? _c(
+                                  "div",
+                                  { key: "nico", staticClass: "account" },
+                                  [
+                                    _c("span", [
+                                      _vm._v(_vm._s(_vm.social.nico))
+                                    ])
+                                  ]
+                                )
+                              : _vm.displaySocial === 2 && _vm.social.youtube
+                              ? _c(
+                                  "div",
+                                  { key: "youtube", staticClass: "account" },
+                                  [
+                                    _c("span", { staticClass: "icon" }, [
+                                      _c("i", { staticClass: "fab fa-youtube" })
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("span", [
+                                      _vm._v(_vm._s(_vm.social.youtube))
+                                    ])
+                                  ]
+                                )
+                              : _vm.displaySocial === 3 && _vm.social.twitter
+                              ? _c(
+                                  "div",
+                                  { key: "twitter", staticClass: "account" },
+                                  [
+                                    _c("span", { staticClass: "icon" }, [
+                                      _c("i", { staticClass: "fab fa-twitter" })
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("span", [
+                                      _vm._v(_vm._s(_vm.social.twitter))
+                                    ])
+                                  ]
+                                )
+                              : _c("div", {
+                                  key: "blank",
+                                  staticClass: "account"
+                                })
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", [
+                          _vm._v(
+                            "\n          " + _vm._s(_vm.time) + "\n        "
+                          )
+                        ])
+                      ],
+                      1
                     ),
                     _vm._v(" "),
-                    _c("div", [
-                      _vm._v("\n          " + _vm._s(_vm.time) + "\n        ")
+                    _c("div", { staticClass: "name" }, [
+                      _vm._v("\n        " + _vm._s(_vm.name) + "\n      ")
                     ])
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "name" }, [
-                  _vm._v("\n        " + _vm._s(_vm.name) + "\n      ")
-                ])
-              ]
-            )
-          ])
+                  ]
+                )
+              ])
+            : _c("long-nameplate-bg-reversed", [
+                _c(
+                  "div",
+                  {
+                    staticClass: "bg",
+                    style: {
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "flex-end",
+                      width: "100%",
+                      height: "65px"
+                    }
+                  },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "info",
+                        style: {
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "space-between",
+                          font: "normal normal normal 32px 'Ubuntu Mono'"
+                        }
+                      },
+                      [
+                        _c(
+                          "transition",
+                          { attrs: { name: "social", mode: "out-in" } },
+                          [
+                            _vm.displaySocial === 0 && _vm.social.twitch
+                              ? _c(
+                                  "div",
+                                  { key: "twitch", staticClass: "account" },
+                                  [
+                                    _c("span", { staticClass: "icon" }, [
+                                      _c("i", { staticClass: "fab fa-twitch" })
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("span", [
+                                      _vm._v(_vm._s(_vm.social.twitch))
+                                    ])
+                                  ]
+                                )
+                              : _vm.displaySocial === 1 && _vm.social.nico
+                              ? _c(
+                                  "div",
+                                  { key: "nico", staticClass: "account" },
+                                  [
+                                    _c("span", [
+                                      _vm._v(_vm._s(_vm.social.nico))
+                                    ])
+                                  ]
+                                )
+                              : _vm.displaySocial === 2 && _vm.social.youtube
+                              ? _c(
+                                  "div",
+                                  { key: "youtube", staticClass: "account" },
+                                  [
+                                    _c("span", { staticClass: "icon" }, [
+                                      _c("i", { staticClass: "fab fa-youtube" })
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("span", [
+                                      _vm._v(_vm._s(_vm.social.youtube))
+                                    ])
+                                  ]
+                                )
+                              : _vm.displaySocial === 3 && _vm.social.twitter
+                              ? _c(
+                                  "div",
+                                  { key: "twitter", staticClass: "account" },
+                                  [
+                                    _c("span", { staticClass: "icon" }, [
+                                      _c("i", { staticClass: "fab fa-twitter" })
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("span", [
+                                      _vm._v(_vm._s(_vm.social.twitter))
+                                    ])
+                                  ]
+                                )
+                              : _c("div", {
+                                  key: "blank",
+                                  staticClass: "account"
+                                })
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", [
+                          _vm._v(
+                            "\n          " + _vm._s(_vm.time) + "\n        "
+                          )
+                        ])
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "name" }, [
+                      _vm._v("\n        " + _vm._s(_vm.name) + "\n      ")
+                    ])
+                  ]
+                )
+              ])
         ],
         1
       )
@@ -60310,7 +60575,7 @@ render._withStripped = true
       
       }
     })();
-},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","../../_statics/cu_short.svg":"_statics/cu_short.svg","../../components/BackGround/LongNameplateBgComponent.vue":"components/BackGround/LongNameplateBgComponent.vue","../../../plugin/theme":"../plugin/theme.ts","_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"components/BackGround/StraightNameplateBgComponent.vue":[function(require,module,exports) {
+},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","../../components/BackGround/LongNameplateBgComponent.vue":"components/BackGround/LongNameplateBgComponent.vue","../../components/BackGround/LongNameplateBgReversedComponent.vue":"components/BackGround/LongNameplateBgReversedComponent.vue","../../../plugin/theme":"../plugin/theme.ts","_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"components/BackGround/StraightNameplateBgComponent.vue":[function(require,module,exports) {
 "use strict";
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -60356,8 +60621,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var vue_property_decorator_1 = require("vue-property-decorator");
-
-var theme_1 = require("../../../plugin/theme");
 /* global nodecg */
 
 
@@ -60367,10 +60630,7 @@ function (_super) {
   __extends(StraightNameplateBg, _super);
 
   function StraightNameplateBg() {
-    var _this = _super !== null && _super.apply(this, arguments) || this;
-
-    _this.color = theme_1.theme.secondary;
-    return _this;
+    return _super !== null && _super.apply(this, arguments) || this;
   }
 
   StraightNameplateBg = __decorate([vue_property_decorator_1.Component], StraightNameplateBg);
@@ -60409,11 +60669,7 @@ exports.default = StraightNameplateBg;
           _c("g", { attrs: { transform: "translate(-715 -862)" } }, [
             _c("line", {
               staticClass: "a",
-              attrs: {
-                x2: "454",
-                transform: "translate(733 872)",
-                stroke: _vm.color
-              }
+              attrs: { x2: "454", transform: "translate(733 872)" }
             }),
             _vm._v(" "),
             _c(
@@ -60499,7 +60755,7 @@ render._withStripped = true
       
       }
     })();
-},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","../../../plugin/theme":"../plugin/theme.ts","_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"components/Nameplate/RaceCommentatorNameplate.vue":[function(require,module,exports) {
+},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"components/Nameplate/RaceCommentatorNameplate.vue":[function(require,module,exports) {
 "use strict";
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -60552,8 +60808,6 @@ Object.defineProperty(exports, "__esModule", {
 
 var vue_property_decorator_1 = require("vue-property-decorator");
 
-var cu_short_svg_1 = __importDefault(require("../../_statics/cu_short.svg"));
-
 var StraightNameplateBgComponent_vue_1 = __importDefault(require("../../components/BackGround/StraightNameplateBgComponent.vue"));
 
 var theme_1 = require("../../../plugin/theme");
@@ -60567,13 +60821,6 @@ function (_super) {
     return _super !== null && _super.apply(this, arguments) || this;
   }
 
-  Object.defineProperty(RaceCommentatorNameplate.prototype, "backgroundUri", {
-    get: function get() {
-      return cu_short_svg_1.default;
-    },
-    enumerable: false,
-    configurable: true
-  });
   Object.defineProperty(RaceCommentatorNameplate.prototype, "nodecgTheme", {
     get: function get() {
       return theme_1.theme;
@@ -60733,7 +60980,7 @@ render._withStripped = true
       
       }
     })();
-},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","../../_statics/cu_short.svg":"_statics/cu_short.svg","../../components/BackGround/StraightNameplateBgComponent.vue":"components/BackGround/StraightNameplateBgComponent.vue","../../../plugin/theme":"../plugin/theme.ts","_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"components/Timer/Timer.vue":[function(require,module,exports) {
+},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","../../components/BackGround/StraightNameplateBgComponent.vue":"components/BackGround/StraightNameplateBgComponent.vue","../../../plugin/theme":"../plugin/theme.ts","_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"components/Timer/Timer.vue":[function(require,module,exports) {
 "use strict";
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -60844,7 +61091,7 @@ exports.default = Timer;
         height: "100%",
         border: "3px solid " + _vm.nodecgTheme.text,
         color: _vm.nodecgTheme.text,
-        padding: "20px 35px"
+        padding: "20px 35px 8px"
       }
     },
     [
@@ -61227,7 +61474,7 @@ new vue_1.default({
           height: 540
         }, {
           x: 960,
-          y: 0,
+          y: 135,
           width: 960,
           height: 540
         }]
@@ -61263,7 +61510,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56451" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50878" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

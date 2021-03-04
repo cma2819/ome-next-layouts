@@ -1,42 +1,34 @@
 <template>
   <div
-    id="run-2"
-    class="later-than-next"
+    :style="{
+      color: nodecgTheme.text
+    }"
   >
-    <span class="time start-at">{{ scheduled }}~</span>
-    <div class="box game">
-      <span class="title">{{ runData.game }}</span>
-      <div class="info">
-        <div class="category">
-          <span class="label">Category: </span>{{ runData.category }}
-        </div>
+    <div
+      :style="{
+        display: 'flex',
+        justifyContent: 'space-between'
+      }"
+    >
+      <div class="game">
+        {{ runData.game }}
       </div>
-      <div class="info">
-        <div class="platform">
-          <span class="label">Platform: </span>{{ runData.system }}
-        </div>
-        <div class="runner">
-          <span class="label">Runner: </span>{{ runners }}
-        </div>
-        <div
-          v-if="commentators"
-          class="commentator"
-        >
-          <span class="label">Commentator: </span>{{ commentators }}
-        </div>
+      <div class="estimate">
+        {{ runData.estimate }}
       </div>
     </div>
+    <long-straight-nameplate-bg></long-straight-nameplate-bg>
   </div>
 </template>
 
 <style scoped>
 
-.game {
+.game, .estimate {
+  height: 70px;
+  padding: 0 36px;
+  font: normal normal normal 28px 'Source Han Sans JP';
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  font-size: 1.2em;
+  align-items: center;
 }
 
 .game > * {
@@ -81,8 +73,14 @@
 import { Vue, Component, Prop } from 'vue-property-decorator';
 import { RunData } from '../../../../nodecg/external/speedcontrol/RunData';
 import { additionsModule } from '../../../plugin/additions';
+import { theme } from '../../../plugin/theme';
+import LongStraightNameplateBg from '../BackGround/LongStraightNameplateBgComponent.vue';
 
-@Component
+@Component({
+  components: {
+    LongStraightNameplateBg,
+  }
+})
 export default class SetupScheduleComponent extends Vue {
   @Prop(Object)
   readonly runData!: RunData;
@@ -113,6 +111,10 @@ export default class SetupScheduleComponent extends Vue {
     }
 
     return '';
+  }
+
+  get nodecgTheme() {
+    return theme;
   }
 }
 </script>

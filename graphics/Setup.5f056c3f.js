@@ -55739,7 +55739,7 @@ function patchScopedSlots (instance) {
   }
 }
 
-},{}],"components/ClippedCanvas/ClippedCanvas.vue":[function(require,module,exports) {
+},{}],"components/BackGround/SetupMainBgComponent.vue":[function(require,module,exports) {
 "use strict";
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -55785,73 +55785,212 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var vue_property_decorator_1 = require("vue-property-decorator");
+/* global nodecg */
 
-var ClippedCanvas =
+
+var SetupMainBg =
 /** @class */
 function (_super) {
-  __extends(ClippedCanvas, _super);
+  __extends(SetupMainBg, _super);
 
-  function ClippedCanvas() {
+  function SetupMainBg() {
     return _super !== null && _super.apply(this, arguments) || this;
   }
 
-  ClippedCanvas.prototype.mounted = function () {
-    var _this = this;
-
-    var element = this.$el;
-    var ctx = element.getContext('2d');
-
-    if (ctx) {
-      this.ctx = ctx;
-    }
-
-    var background = new Image();
-    background.src = this.backgroundImage;
-    background.addEventListener('load', function () {
-      _this.draw(background);
-    });
-  };
-
-  ClippedCanvas.prototype.draw = function (bg) {
-    var _this = this;
-
-    var _a;
-
-    if (!this.ctx) {
-      return;
-    }
-
-    this.ctx.drawImage(bg, 0, 0);
-    this.ctx.globalCompositeOperation = 'xor';
-    (_a = this.clipPaths) === null || _a === void 0 ? void 0 : _a.forEach(function (clipPath) {
-      var _a;
-
-      (_a = _this.ctx) === null || _a === void 0 ? void 0 : _a.fillRect(clipPath.x, clipPath.y, clipPath.width, clipPath.height);
-    });
-  };
-
-  __decorate([vue_property_decorator_1.Prop(Array)], ClippedCanvas.prototype, "clipPaths", void 0);
-
-  __decorate([vue_property_decorator_1.Prop(String)], ClippedCanvas.prototype, "backgroundImage", void 0);
-
-  ClippedCanvas = __decorate([vue_property_decorator_1.Component], ClippedCanvas);
-  return ClippedCanvas;
+  SetupMainBg = __decorate([vue_property_decorator_1.Component], SetupMainBg);
+  return SetupMainBg;
 }(vue_property_decorator_1.Vue);
 
-exports.default = ClippedCanvas;
-        var $c25ef2 = exports.default || module.exports;
+exports.default = SetupMainBg;
+        var $f745da = exports.default || module.exports;
       
-      if (typeof $c25ef2 === 'function') {
-        $c25ef2 = $c25ef2.options;
+      if (typeof $f745da === 'function') {
+        $f745da = $f745da.options;
       }
     
         /* template */
-        Object.assign($c25ef2, (function () {
+        Object.assign($f745da, (function () {
           var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("canvas", { attrs: { width: "1920", height: "1080" } })
+  return _c("div", [
+    _c(
+      "svg",
+      {
+        attrs: {
+          xmlns: "http://www.w3.org/2000/svg",
+          width: "1331",
+          height: "256",
+          viewBox: "0 0 1331 256"
+        }
+      },
+      [
+        _c("g", { attrs: { transform: "translate(-817 -744)" } }, [
+          _c("path", {
+            staticClass: "a",
+            attrs: { d: "M0,0H770", transform: "translate(835.378 872)" }
+          }),
+          _vm._v(" "),
+          _c(
+            "g",
+            {
+              staticClass: "b",
+              attrs: { transform: "translate(837 882) rotate(180)" }
+            },
+            [
+              _c("circle", {
+                staticClass: "d",
+                attrs: { cx: "10", cy: "10", r: "10" }
+              }),
+              _vm._v(" "),
+              _c("circle", {
+                staticClass: "e",
+                attrs: { cx: "10", cy: "10", r: "7.5" }
+              })
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "g",
+            {
+              staticClass: "b",
+              attrs: { transform: "translate(1624 882) rotate(180)" }
+            },
+            [
+              _c("circle", {
+                staticClass: "d",
+                attrs: { cx: "10", cy: "10", r: "10" }
+              }),
+              _vm._v(" "),
+              _c("circle", {
+                staticClass: "e",
+                attrs: { cx: "10", cy: "10", r: "7.5" }
+              })
+            ]
+          ),
+          _vm._v(" "),
+          _c("path", {
+            staticClass: "a",
+            attrs: {
+              d: "M916.58,872l118.415,118H1796.58",
+              transform: "translate(174.42)"
+            }
+          }),
+          _vm._v(" "),
+          _c(
+            "g",
+            {
+              staticClass: "b",
+              attrs: { transform: "translate(1989 1000) rotate(180)" }
+            },
+            [
+              _c("circle", {
+                staticClass: "d",
+                attrs: { cx: "10", cy: "10", r: "10" }
+              }),
+              _vm._v(" "),
+              _c("circle", {
+                staticClass: "e",
+                attrs: { cx: "10", cy: "10", r: "7.5" }
+              })
+            ]
+          ),
+          _vm._v(" "),
+          _c("path", {
+            staticClass: "a",
+            attrs: {
+              d: "M916.58,990,1033.7,872h332.88",
+              transform: "translate(763.42 0)"
+            }
+          }),
+          _vm._v(" "),
+          _c(
+            "g",
+            {
+              staticClass: "b",
+              attrs: { transform: "translate(2148 882) rotate(180)" }
+            },
+            [
+              _c("circle", {
+                staticClass: "d",
+                attrs: { cx: "10", cy: "10", r: "10" }
+              }),
+              _vm._v(" "),
+              _c("circle", {
+                staticClass: "e",
+                attrs: { cx: "10", cy: "10", r: "7.5" }
+              })
+            ]
+          ),
+          _vm._v(" "),
+          _c("path", {
+            staticClass: "a",
+            attrs: {
+              d: "M916.58,990l118.415-118H1342.58",
+              transform: "translate(537.42 -118)"
+            }
+          }),
+          _vm._v(" "),
+          _c(
+            "g",
+            {
+              staticClass: "b",
+              attrs: { transform: "translate(1898 764) rotate(180)" }
+            },
+            [
+              _c("circle", {
+                staticClass: "d",
+                attrs: { cx: "10", cy: "10", r: "10" }
+              }),
+              _vm._v(" "),
+              _c("circle", {
+                staticClass: "e",
+                attrs: { cx: "10", cy: "10", r: "7.5" }
+              })
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "text",
+            {
+              staticClass: "c",
+              attrs: { transform: "translate(1127.28 902.194) rotate(45)" }
+            },
+            [_c("tspan", { attrs: { x: "0", y: "0" } }, [_vm._v("Runner")])]
+          ),
+          _vm._v(" "),
+          _c(
+            "text",
+            {
+              staticClass: "c",
+              attrs: { transform: "translate(1674.553 989.542) rotate(-45)" }
+            },
+            [
+              _c("tspan", { attrs: { x: "0", y: "0" } }, [
+                _vm._v("Commentator")
+              ])
+            ]
+          )
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        style: {
+          position: "absolute",
+          left: "0px",
+          bottom: "0px",
+          width: "100%",
+          height: "100%"
+        }
+      },
+      [_vm._t("default")],
+      2
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -55860,7 +55999,7 @@ render._withStripped = true
             render: render,
             staticRenderFns: staticRenderFns,
             _compiled: true,
-            _scopeId: null,
+            _scopeId: "data-v-f745da",
             functional: undefined
           };
         })());
@@ -55873,27 +56012,20 @@ render._withStripped = true
         if (api.compatible) {
           module.hot.accept();
           if (!module.hot.data) {
-            api.createRecord('$c25ef2', $c25ef2);
+            api.createRecord('$f745da', $f745da);
           } else {
-            api.reload('$c25ef2', $c25ef2);
+            api.reload('$f745da', $f745da);
           }
         }
 
         
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
       }
     })();
-},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"../plugin/nodecg.ts":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.spotifyNodecg = exports.twitterNodecg = exports.additionNodecg = exports.bundleNodecg = void 0;
-exports.bundleNodecg = nodecg;
-exports.additionNodecg = nodecg;
-exports.twitterNodecg = nodecg;
-exports.spotifyNodecg = nodecg;
-},{}],"../../../node_modules/vuex-module-decorators/dist/esm/index.js":[function(require,module,exports) {
+},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"../../../node_modules/vuex-module-decorators/dist/esm/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -58967,7 +59099,18 @@ var clone = function () {
 if (typeof module === 'object' && module.exports) {
   module.exports = clone;
 }
-},{"buffer":"../../../node_modules/buffer/index.js"}],"../plugin/additions.ts":[function(require,module,exports) {
+},{"buffer":"../../../node_modules/buffer/index.js"}],"../plugin/nodecg.ts":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.spotifyNodecg = exports.twitterNodecg = exports.additionNodecg = exports.bundleNodecg = void 0;
+exports.bundleNodecg = nodecg;
+exports.additionNodecg = nodecg;
+exports.twitterNodecg = nodecg;
+exports.spotifyNodecg = nodecg;
+},{}],"../plugin/additions.ts":[function(require,module,exports) {
 "use strict";
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -59092,7 +59235,774 @@ replicantMutations.forEach(function (_a) {
     mutator(clone_1.default(newVal));
   });
 });
-},{"vuex-module-decorators":"../../../node_modules/vuex-module-decorators/dist/esm/index.js","./store":"../plugin/store.ts","clone":"../../../node_modules/clone/clone.js","./nodecg":"../plugin/nodecg.ts"}],"../plugin/speedcontrol.ts":[function(require,module,exports) {
+},{"vuex-module-decorators":"../../../node_modules/vuex-module-decorators/dist/esm/index.js","./store":"../plugin/store.ts","clone":"../../../node_modules/clone/clone.js","./nodecg":"../plugin/nodecg.ts"}],"../plugin/theme.ts":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.theme = void 0;
+
+var nodecg_1 = require("./nodecg");
+
+exports.theme = nodecg_1.bundleNodecg.bundleConfig.theme || {
+  primary: '#104200',
+  secondary: '#208200',
+  text: '#ffffff',
+  timer: {
+    pause: '#888888',
+    running: '#ffffff',
+    finish: '#ff9900'
+  }
+};
+},{"./nodecg":"../plugin/nodecg.ts"}],"components/SetupSchedule/UpnextScheduleComponent.vue":[function(require,module,exports) {
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+var __extends = this && this.__extends || function () {
+  var _extendStatics = function extendStatics(d, b) {
+    _extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) {
+        if (b.hasOwnProperty(p)) d[p] = b[p];
+      }
+    };
+
+    return _extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    _extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+var __decorate = this && this.__decorate || function (decorators, target, key, desc) {
+  var c = arguments.length,
+      r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+      d;
+  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
+    if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+  }
+  return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var vue_property_decorator_1 = require("vue-property-decorator");
+
+var SetupMainBgComponent_vue_1 = __importDefault(require("../BackGround/SetupMainBgComponent.vue"));
+
+var additions_1 = require("../../../plugin/additions");
+
+var theme_1 = require("../../../plugin/theme");
+
+var SetupScheduleComponent =
+/** @class */
+function (_super) {
+  __extends(SetupScheduleComponent, _super);
+
+  function SetupScheduleComponent() {
+    return _super !== null && _super.apply(this, arguments) || this;
+  }
+
+  Object.defineProperty(SetupScheduleComponent.prototype, "titleSplits", {
+    get: function get() {
+      var _a;
+
+      return ((_a = this.runData.game) === null || _a === void 0 ? void 0 : _a.split(' ')) || [];
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(SetupScheduleComponent.prototype, "categorySplits", {
+    get: function get() {
+      var _a;
+
+      return ((_a = this.runData.category) === null || _a === void 0 ? void 0 : _a.split(' ')) || [];
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(SetupScheduleComponent.prototype, "runners", {
+    get: function get() {
+      return this.runData.teams.flatMap(function (team) {
+        return team.players.flatMap(function (player) {
+          return player.name;
+        });
+      });
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(SetupScheduleComponent.prototype, "commentators", {
+    get: function get() {
+      var _this = this;
+
+      if (this.runData === undefined) {
+        console.log('runData is undefined');
+        return '';
+      }
+
+      return additions_1.additionsModule.commentatorArray.filter(function (commentator) {
+        return commentator.assignedRunIdArray.find(function (runId) {
+          return runId === _this.runData.externalID;
+        });
+      }).map(function (commentator) {
+        return commentator.name;
+      }).join(' / ');
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(SetupScheduleComponent.prototype, "nodecgTheme", {
+    get: function get() {
+      return theme_1.theme;
+    },
+    enumerable: false,
+    configurable: true
+  });
+
+  __decorate([vue_property_decorator_1.Prop(Object)], SetupScheduleComponent.prototype, "runData", void 0);
+
+  SetupScheduleComponent = __decorate([vue_property_decorator_1.Component({
+    components: {
+      SetupMainBg: SetupMainBgComponent_vue_1.default
+    }
+  })], SetupScheduleComponent);
+  return SetupScheduleComponent;
+}(vue_property_decorator_1.Vue);
+
+exports.default = SetupScheduleComponent;
+        var $4441ef = exports.default || module.exports;
+      
+      if (typeof $4441ef === 'function') {
+        $4441ef = $4441ef.options;
+      }
+    
+        /* template */
+        Object.assign($4441ef, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm.runData
+    ? _c(
+        "div",
+        {
+          style: {
+            color: _vm.nodecgTheme.text
+          }
+        },
+        [
+          _c("setup-main-bg", [
+            _c("div", [
+              _c(
+                "div",
+                {
+                  staticClass: "label",
+                  style: {
+                    fontSize: "42px",
+                    top: "-32px",
+                    left: "32px"
+                  }
+                },
+                [_vm._v("\n        次のゲーム\n      ")]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "data jp",
+                  style: {
+                    display: "block",
+                    fontSize: "28px",
+                    top: "48px",
+                    left: "32px",
+                    height: "84px",
+                    width: "630px",
+                    display: "flex",
+                    flexWrap: "wrap",
+                    alignItems: "center"
+                  }
+                },
+                _vm._l(_vm.titleSplits, function(title, idx) {
+                  return _c(
+                    "div",
+                    {
+                      key: idx,
+                      style: {
+                        padding: "0 0.25em"
+                      }
+                    },
+                    [_vm._v("\n          " + _vm._s(title) + "\n        ")]
+                  )
+                }),
+                0
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "data jp game-info",
+                  style: {
+                    top: "142px",
+                    left: "32px",
+                    width: "256px",
+                    fontSize: "24px",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "start"
+                  }
+                },
+                [
+                  _vm.categorySplits.length > 0
+                    ? _c(
+                        "div",
+                        {
+                          style: {
+                            display: "flex",
+                            flexWrap: "wrap",
+                            width: "100%",
+                            borderBottom:
+                              "4px solid " + _vm.nodecgTheme.secondary
+                          }
+                        },
+                        _vm._l(_vm.categorySplits, function(category, idx) {
+                          return _c(
+                            "div",
+                            {
+                              key: idx,
+                              style: {
+                                padding: "0 0.25em"
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n            " +
+                                  _vm._s(category) +
+                                  "\n          "
+                              )
+                            ]
+                          )
+                        }),
+                        0
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      style: {
+                        margin: "0 0.25em"
+                      }
+                    },
+                    [_vm._v(_vm._s(_vm.runData.system))]
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "label",
+                  style: {
+                    fontSize: "32px",
+                    top: "-40px",
+                    left: "758px"
+                  }
+                },
+                [_vm._v("\n        予定タイム\n      ")]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "data en",
+                  style: {
+                    fontSize: "64px",
+                    top: "22px",
+                    left: "778px"
+                  }
+                },
+                [
+                  _vm._v(
+                    "\n        " + _vm._s(_vm.runData.estimate) + "\n      "
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "data jp",
+                  style: {
+                    fontSize: "28px",
+                    top: "128px",
+                    left: "400px",
+                    height: "120px",
+                    display: "flex",
+                    justifyContent: "center",
+                    flexDirection: "column"
+                  }
+                },
+                _vm._l(_vm.runners, function(runner, idx) {
+                  return _c("div", { key: idx }, [
+                    _vm._v("\n          " + _vm._s(runner) + "\n        ")
+                  ])
+                }),
+                0
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "data jp",
+                  style: {
+                    fontSize: "28px",
+                    top: "128px",
+                    left: "980px",
+                    height: "120px",
+                    display: "flex",
+                    justifyContent: "center",
+                    flexDirection: "column"
+                  }
+                },
+                [_vm._v("\n        " + _vm._s(_vm.commentators) + "\n      ")]
+              )
+            ])
+          ])
+        ],
+        1
+      )
+    : _vm._e()
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: "data-v-4441ef",
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$4441ef', $4441ef);
+          } else {
+            api.reload('$4441ef', $4441ef);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","../BackGround/SetupMainBgComponent.vue":"components/BackGround/SetupMainBgComponent.vue","../../../plugin/additions":"../plugin/additions.ts","../../../plugin/theme":"../plugin/theme.ts","_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"components/BackGround/LongStraightNameplateBgComponent.vue":[function(require,module,exports) {
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+var __extends = this && this.__extends || function () {
+  var _extendStatics = function extendStatics(d, b) {
+    _extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) {
+        if (b.hasOwnProperty(p)) d[p] = b[p];
+      }
+    };
+
+    return _extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    _extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+var __decorate = this && this.__decorate || function (decorators, target, key, desc) {
+  var c = arguments.length,
+      r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+      d;
+  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
+    if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+  }
+  return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var vue_property_decorator_1 = require("vue-property-decorator");
+/* global nodecg */
+
+
+var LongStraightNameplateBg =
+/** @class */
+function (_super) {
+  __extends(LongStraightNameplateBg, _super);
+
+  function LongStraightNameplateBg() {
+    return _super !== null && _super.apply(this, arguments) || this;
+  }
+
+  LongStraightNameplateBg = __decorate([vue_property_decorator_1.Component], LongStraightNameplateBg);
+  return LongStraightNameplateBg;
+}(vue_property_decorator_1.Vue);
+
+exports.default = LongStraightNameplateBg;
+        var $52ab5d = exports.default || module.exports;
+      
+      if (typeof $52ab5d === 'function') {
+        $52ab5d = $52ab5d.options;
+      }
+    
+        /* template */
+        Object.assign($52ab5d, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "svg",
+    {
+      attrs: {
+        xmlns: "http://www.w3.org/2000/svg",
+        width: "1222",
+        height: "20",
+        viewBox: "0 0 1222 20"
+      }
+    },
+    [
+      _c("g", { attrs: { transform: "translate(-382 -612)" } }, [
+        _c("path", {
+          staticClass: "a",
+          attrs: { d: "M-154.378,0h1186", transform: "translate(554.378 622)" }
+        }),
+        _vm._v(" "),
+        _c(
+          "g",
+          {
+            staticClass: "b",
+            attrs: { transform: "translate(402 632) rotate(180)" }
+          },
+          [
+            _c("circle", {
+              staticClass: "c",
+              attrs: { cx: "10", cy: "10", r: "10" }
+            }),
+            _vm._v(" "),
+            _c("circle", {
+              staticClass: "d",
+              attrs: { cx: "10", cy: "10", r: "7.5" }
+            })
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "g",
+          {
+            staticClass: "b",
+            attrs: { transform: "translate(1604 632) rotate(180)" }
+          },
+          [
+            _c("circle", {
+              staticClass: "c",
+              attrs: { cx: "10", cy: "10", r: "10" }
+            }),
+            _vm._v(" "),
+            _c("circle", {
+              staticClass: "d",
+              attrs: { cx: "10", cy: "10", r: "7.5" }
+            })
+          ]
+        )
+      ])
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: "data-v-52ab5d",
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$52ab5d', $52ab5d);
+          } else {
+            api.reload('$52ab5d', $52ab5d);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"components/SetupSchedule/OndeckScheduleComponent.vue":[function(require,module,exports) {
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+var __extends = this && this.__extends || function () {
+  var _extendStatics = function extendStatics(d, b) {
+    _extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) {
+        if (b.hasOwnProperty(p)) d[p] = b[p];
+      }
+    };
+
+    return _extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    _extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+var __decorate = this && this.__decorate || function (decorators, target, key, desc) {
+  var c = arguments.length,
+      r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+      d;
+  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
+    if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+  }
+  return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var vue_property_decorator_1 = require("vue-property-decorator");
+
+var additions_1 = require("../../../plugin/additions");
+
+var theme_1 = require("../../../plugin/theme");
+
+var LongStraightNameplateBgComponent_vue_1 = __importDefault(require("../BackGround/LongStraightNameplateBgComponent.vue"));
+
+var SetupScheduleComponent =
+/** @class */
+function (_super) {
+  __extends(SetupScheduleComponent, _super);
+
+  function SetupScheduleComponent() {
+    return _super !== null && _super.apply(this, arguments) || this;
+  }
+
+  Object.defineProperty(SetupScheduleComponent.prototype, "runners", {
+    get: function get() {
+      return this.runData.teams.flatMap(function (team) {
+        return team.players.flatMap(function (player) {
+          return player.name;
+        });
+      }).join(' / ');
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(SetupScheduleComponent.prototype, "commentators", {
+    get: function get() {
+      var _this = this;
+
+      if (this.runData === undefined) {
+        console.log('runData is undefined');
+        return '';
+      }
+
+      return additions_1.additionsModule.commentatorArray.filter(function (commentator) {
+        return commentator.assignedRunIdArray.find(function (runId) {
+          return runId === _this.runData.externalID;
+        });
+      }).map(function (commentator) {
+        return commentator.name;
+      }).join(' / ');
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(SetupScheduleComponent.prototype, "scheduled", {
+    get: function get() {
+      if (this.runData.scheduledS) {
+        return new Date(this.runData.scheduledS * 1000).toLocaleTimeString('ja-JP', {
+          hour: '2-digit',
+          minute: '2-digit'
+        });
+      }
+
+      return '';
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(SetupScheduleComponent.prototype, "nodecgTheme", {
+    get: function get() {
+      return theme_1.theme;
+    },
+    enumerable: false,
+    configurable: true
+  });
+
+  __decorate([vue_property_decorator_1.Prop(Object)], SetupScheduleComponent.prototype, "runData", void 0);
+
+  SetupScheduleComponent = __decorate([vue_property_decorator_1.Component({
+    components: {
+      LongStraightNameplateBg: LongStraightNameplateBgComponent_vue_1.default
+    }
+  })], SetupScheduleComponent);
+  return SetupScheduleComponent;
+}(vue_property_decorator_1.Vue);
+
+exports.default = SetupScheduleComponent;
+        var $d2dff4 = exports.default || module.exports;
+      
+      if (typeof $d2dff4 === 'function') {
+        $d2dff4 = $d2dff4.options;
+      }
+    
+        /* template */
+        Object.assign($d2dff4, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      style: {
+        color: _vm.nodecgTheme.text
+      }
+    },
+    [
+      _c(
+        "div",
+        {
+          style: {
+            display: "flex",
+            justifyContent: "space-between"
+          }
+        },
+        [
+          _c("div", { staticClass: "game" }, [
+            _vm._v("\n      " + _vm._s(_vm.runData.game) + "\n    ")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "estimate" }, [
+            _vm._v("\n      " + _vm._s(_vm.runData.estimate) + "\n    ")
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c("long-straight-nameplate-bg")
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: "data-v-d2dff4",
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$d2dff4', $d2dff4);
+          } else {
+            api.reload('$d2dff4', $d2dff4);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","../../../plugin/additions":"../plugin/additions.ts","../../../plugin/theme":"../plugin/theme.ts","../BackGround/LongStraightNameplateBgComponent.vue":"components/BackGround/LongStraightNameplateBgComponent.vue","_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"../plugin/speedcontrol.ts":[function(require,module,exports) {
 "use strict";
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -59221,7 +60131,7 @@ exports.existsSocialIn = function (social) {
   social.twitter ? exists.push(TWITTER) : null;
   return exists;
 };
-},{}],"_lib/gameViewModule.ts":[function(require,module,exports) {
+},{}],"components/SetupSchedule/SetupScheduleComponent.vue":[function(require,module,exports) {
 "use strict";
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -59271,478 +60181,106 @@ var __importDefault = this && this.__importDefault || function (mod) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.gameViewModule = void 0;
 
-var vuex_module_decorators_1 = require("vuex-module-decorators");
+var vue_property_decorator_1 = require("vue-property-decorator");
 
-var store_1 = __importDefault(require("../../plugin/store"));
+var UpnextScheduleComponent_vue_1 = __importDefault(require("./UpnextScheduleComponent.vue"));
 
-var additions_1 = require("../../plugin/additions");
+var OndeckScheduleComponent_vue_1 = __importDefault(require("./OndeckScheduleComponent.vue"));
 
-var speedcontrol_1 = require("../../plugin/speedcontrol");
+var speedcontrol_1 = require("../../../plugin/speedcontrol");
 
-var util_1 = require("./util");
+var additions_1 = require("../../../plugin/additions");
 
-var GameViewModule =
+var util_1 = require("../../_lib/util");
+
+var theme_1 = require("../../../plugin/theme");
+
+var SetupScheduleComponent =
 /** @class */
 function (_super) {
-  __extends(GameViewModule, _super);
+  __extends(SetupScheduleComponent, _super);
 
-  function GameViewModule() {
-    var _this = _super !== null && _super.apply(this, arguments) || this;
-
-    _this.displaySocialIndex = 0;
-    return _this;
+  function SetupScheduleComponent() {
+    return _super !== null && _super.apply(this, arguments) || this;
   }
 
-  Object.defineProperty(GameViewModule.prototype, "runData", {
+  Object.defineProperty(SetupScheduleComponent.prototype, "upcomingRuns", {
     get: function get() {
-      var currentRun = speedcontrol_1.speedcontrolModule.runDataArray[additions_1.additionsModule.speedcontrolCurrentRunIndex];
-      return {
-        game: (currentRun === null || currentRun === void 0 ? void 0 : currentRun.game) || '',
-        category: (currentRun === null || currentRun === void 0 ? void 0 : currentRun.category) || '',
-        platform: (currentRun === null || currentRun === void 0 ? void 0 : currentRun.system) || '',
-        estimate: (currentRun === null || currentRun === void 0 ? void 0 : currentRun.estimate) || ''
-      };
+      var currentRunIndex = additions_1.additionsModule.speedcontrolCurrentRunIndex || 0;
+      return speedcontrol_1.speedcontrolModule.runDataArray.slice(currentRunIndex, currentRunIndex + 3);
     },
     enumerable: false,
     configurable: true
   });
-  Object.defineProperty(GameViewModule.prototype, "nextRunData", {
+  Object.defineProperty(SetupScheduleComponent.prototype, "upnextRun", {
     get: function get() {
-      if (speedcontrol_1.speedcontrolModule.runDataArray.length === additions_1.additionsModule.speedcontrolCurrentRunIndex + 1) {
-        return {
-          runData: null,
-          runner: ''
-        };
-      }
-
-      var nextRun = speedcontrol_1.speedcontrolModule.runDataArray[additions_1.additionsModule.speedcontrolCurrentRunIndex + 1];
-      return {
-        runData: nextRun || null,
-        runner: nextRun.teams.map(function (team) {
-          return team.players[0].name;
-        }).join(' / ')
-      };
+      return this.upcomingRuns[0];
     },
     enumerable: false,
     configurable: true
   });
-  Object.defineProperty(GameViewModule.prototype, "commentator", {
+  Object.defineProperty(SetupScheduleComponent.prototype, "ondeckRuns", {
     get: function get() {
-      var name = [];
-      var twitch = [];
-      var nico = [];
-      var youtube = [];
-      var twitter = [];
-      var currentRun = speedcontrol_1.speedcontrolModule.runDataArray[additions_1.additionsModule.speedcontrolCurrentRunIndex];
-
-      if (!currentRun) {
-        return {
-          name: '',
-          social: {}
-        };
-      }
-
-      additions_1.additionsModule.commentatorArray.filter(function (commentator) {
-        return commentator.assignedRunIdArray.some(function (runId) {
-          return runId === currentRun.externalID;
-        });
-      }).forEach(function (commentator) {
-        name.push(commentator.name);
-        commentator.social.twitch ? twitch.push(commentator.social.twitch) : twitch.push('-');
-        commentator.social.nico ? nico.push(commentator.social.nico) : nico.push('-');
-        commentator.social.youtube ? youtube.push(commentator.social.youtube) : youtube.push('-');
-        commentator.social.twitter ? twitter.push(commentator.social.twitter) : twitter.push('-');
+      return this.upcomingRuns.filter(function (_, index) {
+        return index !== 0;
       });
-      return {
-        name: name.join(' / '),
-        social: {
-          twitch: twitch.filter(function (t) {
-            return t !== '-';
-          }).length > 0 ? twitch.join(' / ') : undefined,
-          nico: nico.filter(function (n) {
-            return n !== '-';
-          }).length > 0 ? nico.join(' / ') : undefined,
-          youtube: youtube.filter(function (y) {
-            return y !== '-';
-          }).length > 0 ? youtube.join(' / ') : undefined,
-          twitter: twitter.filter(function (t) {
-            return t !== '-';
-          }).length > 0 ? twitter.join(' / ') : undefined
-        }
-      };
     },
     enumerable: false,
     configurable: true
   });
-  Object.defineProperty(GameViewModule.prototype, "runners", {
+  Object.defineProperty(SetupScheduleComponent.prototype, "upcomingStartIn", {
     get: function get() {
-      var _a;
-
-      var currentRun = speedcontrol_1.speedcontrolModule.runDataArray[additions_1.additionsModule.speedcontrolCurrentRunIndex];
-      var teamFinishTimes = (_a = speedcontrol_1.speedcontrolModule === null || speedcontrol_1.speedcontrolModule === void 0 ? void 0 : speedcontrol_1.speedcontrolModule.timer) === null || _a === void 0 ? void 0 : _a.teamFinishTimes;
-
-      if (!currentRun || !teamFinishTimes) {
+      if (!this.upcomingRuns) {
         return [];
       }
 
-      return currentRun.teams.map(function (team) {
-        var runner = team.players[0];
+      var startInArray = [];
+      startInArray.push(''); // First Element is never used
 
-        if (!runner) {
-          return {
-            name: '',
-            social: {},
-            status: 'running',
-            time: ''
-          };
-        }
+      if (!this.upcomingRuns[1]) {
+        return startInArray;
+      }
 
-        var runnerAddition = additions_1.additionsModule.speedcontrolUserAdditionArray.find(function (userAddition) {
-          return userAddition.id === runner.externalID;
-        });
-        var finishTime = teamFinishTimes[team.id];
-        return {
-          name: runner.name,
-          social: {
-            twitch: runner.social.twitch,
-            nico: runnerAddition === null || runnerAddition === void 0 ? void 0 : runnerAddition.social.nico,
-            youtube: runnerAddition === null || runnerAddition === void 0 ? void 0 : runnerAddition.social.youtube,
-            twitter: runnerAddition === null || runnerAddition === void 0 ? void 0 : runnerAddition.social.twitter
-          },
-          status: finishTime ? finishTime.state : 'running',
-          time: finishTime ? util_1.secondsToFormatted(Math.floor(finishTime.milliseconds / 1000)) : ''
-        };
-      });
+      var secondRunStartIn = (this.upcomingRuns[0].estimateS || 0) + (this.upcomingRuns[1].setupTimeS || 0);
+      startInArray.push(util_1.secondsToFormatted(secondRunStartIn));
+
+      if (!this.upcomingRuns[2]) {
+        return startInArray;
+      }
+
+      var thirdRunStartIn = secondRunStartIn + (this.upcomingRuns[1].estimateS || 0) + (this.upcomingRuns[2].setupTimeS || 0);
+      startInArray.push(util_1.secondsToFormatted(thirdRunStartIn));
+      return startInArray;
     },
     enumerable: false,
     configurable: true
   });
-  Object.defineProperty(GameViewModule.prototype, "existsSocials", {
-    get: function get() {
-      var existsAll = [];
-      this.runners.forEach(function (runner) {
-        existsAll.push(util_1.existsSocialIn(runner.social));
-      });
-      existsAll.push(util_1.existsSocialIn(this.commentator.social));
-      return existsAll.flat().filter(function (socialIndex, index, self) {
-        return self.indexOf(socialIndex) === index;
-      }).sort();
-    },
-    enumerable: false,
-    configurable: true
-  });
-  Object.defineProperty(GameViewModule.prototype, "currentSocial", {
-    get: function get() {
-      return this.existsSocials[this.displaySocialIndex];
-    },
-    enumerable: false,
-    configurable: true
-  });
-  Object.defineProperty(GameViewModule.prototype, "currentTime", {
-    get: function get() {
-      return {
-        ms: speedcontrol_1.speedcontrolModule.timer.milliseconds || 0,
-        time: speedcontrol_1.speedcontrolModule.timer.milliseconds ? util_1.secondsToFormatted(Math.floor(speedcontrol_1.speedcontrolModule.timer.milliseconds / 1000)) : '00:00'
-      };
-    },
-    enumerable: false,
-    configurable: true
-  });
-  Object.defineProperty(GameViewModule.prototype, "runStatus", {
-    get: function get() {
-      return speedcontrol_1.speedcontrolModule.timer.state || 'stopped';
-    },
-    enumerable: false,
-    configurable: true
-  });
-
-  GameViewModule.prototype._nextSocial = function (exists) {
-    this.displaySocialIndex = (this.displaySocialIndex + 1) % exists.length;
-  };
-
-  GameViewModule.prototype.nextSocial = function () {
-    this._nextSocial(this.existsSocials);
-  };
-
-  __decorate([vuex_module_decorators_1.Mutation], GameViewModule.prototype, "_nextSocial", null);
-
-  __decorate([vuex_module_decorators_1.Action], GameViewModule.prototype, "nextSocial", null);
-
-  GameViewModule = __decorate([vuex_module_decorators_1.Module({
-    dynamic: true,
-    store: store_1.default,
-    name: 'gameViewModule',
-    namespaced: true
-  })], GameViewModule);
-  return GameViewModule;
-}(vuex_module_decorators_1.VuexModule);
-
-exports.gameViewModule = vuex_module_decorators_1.getModule(GameViewModule);
-},{"vuex-module-decorators":"../../../node_modules/vuex-module-decorators/dist/esm/index.js","../../plugin/store":"../plugin/store.ts","../../plugin/additions":"../plugin/additions.ts","../../plugin/speedcontrol":"../plugin/speedcontrol.ts","./util":"_lib/util.ts"}],"views/GameView.vue":[function(require,module,exports) {
-"use strict";
-
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-var __extends = this && this.__extends || function () {
-  var _extendStatics = function extendStatics(d, b) {
-    _extendStatics = Object.setPrototypeOf || {
-      __proto__: []
-    } instanceof Array && function (d, b) {
-      d.__proto__ = b;
-    } || function (d, b) {
-      for (var p in b) {
-        if (b.hasOwnProperty(p)) d[p] = b[p];
-      }
-    };
-
-    return _extendStatics(d, b);
-  };
-
-  return function (d, b) {
-    _extendStatics(d, b);
-
-    function __() {
-      this.constructor = d;
-    }
-
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-  };
-}();
-
-var __decorate = this && this.__decorate || function (decorators, target, key, desc) {
-  var c = arguments.length,
-      r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
-      d;
-  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
-    if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-  }
-  return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var vue_property_decorator_1 = require("vue-property-decorator");
-
-var ClippedCanvas_vue_1 = __importDefault(require("../components/ClippedCanvas/ClippedCanvas.vue"));
-
-var nodecg_1 = require("../../plugin/nodecg");
-
-var gameViewModule_1 = require("../_lib/gameViewModule");
-
-var GameView =
-/** @class */
-function (_super) {
-  __extends(GameView, _super);
-
-  function GameView() {
-    var _this = _super !== null && _super.apply(this, arguments) || this;
-
-    _this.backgroundUri = '';
-    return _this;
-  }
-
-  GameView.prototype.created = function () {
-    var _this = this;
-
-    nodecg_1.bundleNodecg.Replicant('assets:background').on('change', function (newVal) {
-      if (newVal.length > 0) {
-        _this.backgroundUri = newVal[0].url;
-      }
-    });
-    setInterval(function () {
-      gameViewModule_1.gameViewModule.nextSocial();
-    }, 20000);
-  };
-
-  __decorate([vue_property_decorator_1.Prop(Array)], GameView.prototype, "clipPaths", void 0);
-
-  GameView = __decorate([vue_property_decorator_1.Component({
-    components: {
-      ClippedCanvas: ClippedCanvas_vue_1.default
-    }
-  })], GameView);
-  return GameView;
-}(vue_property_decorator_1.Vue);
-
-exports.default = GameView;
-        var $bdd3df = exports.default || module.exports;
-      
-      if (typeof $bdd3df === 'function') {
-        $bdd3df = $bdd3df.options;
-      }
-    
-        /* template */
-        Object.assign($bdd3df, (function () {
-          var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { attrs: { id: "root" } },
-    [
-      _vm._t("default"),
-      _vm._v(" "),
-      _vm.backgroundUri
-        ? _c("clipped-canvas", {
-            attrs: {
-              "background-image": _vm.backgroundUri,
-              "clip-paths": _vm.clipPaths
-            }
-          })
-        : _vm._e()
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-          return {
-            render: render,
-            staticRenderFns: staticRenderFns,
-            _compiled: true,
-            _scopeId: null,
-            functional: undefined
-          };
-        })());
-      
-    /* hot reload */
-    (function () {
-      if (module.hot) {
-        var api = require('vue-hot-reload-api');
-        api.install(require('vue'));
-        if (api.compatible) {
-          module.hot.accept();
-          if (!module.hot.data) {
-            api.createRecord('$bdd3df', $bdd3df);
-          } else {
-            api.reload('$bdd3df', $bdd3df);
-          }
-        }
-
-        
-        var reloadCSS = require('_css_loader');
-        module.hot.dispose(reloadCSS);
-        module.hot.accept(reloadCSS);
-      
-      }
-    })();
-},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","../components/ClippedCanvas/ClippedCanvas.vue":"components/ClippedCanvas/ClippedCanvas.vue","../../plugin/nodecg":"../plugin/nodecg.ts","../_lib/gameViewModule":"_lib/gameViewModule.ts","_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"../plugin/theme.ts":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.theme = void 0;
-
-var nodecg_1 = require("./nodecg");
-
-exports.theme = nodecg_1.bundleNodecg.bundleConfig.theme || {
-  primary: '#104200',
-  secondary: '#208200',
-  text: '#ffffff',
-  timer: {
-    pause: '#888888',
-    running: '#ffffff',
-    finish: '#ff9900'
-  }
-};
-},{"./nodecg":"../plugin/nodecg.ts"}],"components/RunLabel/RunLabel.vue":[function(require,module,exports) {
-"use strict";
-
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-var __extends = this && this.__extends || function () {
-  var _extendStatics = function extendStatics(d, b) {
-    _extendStatics = Object.setPrototypeOf || {
-      __proto__: []
-    } instanceof Array && function (d, b) {
-      d.__proto__ = b;
-    } || function (d, b) {
-      for (var p in b) {
-        if (b.hasOwnProperty(p)) d[p] = b[p];
-      }
-    };
-
-    return _extendStatics(d, b);
-  };
-
-  return function (d, b) {
-    _extendStatics(d, b);
-
-    function __() {
-      this.constructor = d;
-    }
-
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-  };
-}();
-
-var __decorate = this && this.__decorate || function (decorators, target, key, desc) {
-  var c = arguments.length,
-      r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
-      d;
-  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
-    if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-  }
-  return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var vue_property_decorator_1 = require("vue-property-decorator");
-
-var theme_1 = require("../../../plugin/theme");
-
-var RunLabel =
-/** @class */
-function (_super) {
-  __extends(RunLabel, _super);
-
-  function RunLabel() {
-    return _super !== null && _super.apply(this, arguments) || this;
-  }
-
-  Object.defineProperty(RunLabel.prototype, "nodecgTheme", {
+  Object.defineProperty(SetupScheduleComponent.prototype, "nodecgTheme", {
     get: function get() {
       return theme_1.theme;
     },
     enumerable: false,
     configurable: true
   });
-
-  __decorate([vue_property_decorator_1.Prop(String)], RunLabel.prototype, "game", void 0);
-
-  __decorate([vue_property_decorator_1.Prop(String)], RunLabel.prototype, "category", void 0);
-
-  __decorate([vue_property_decorator_1.Prop(String)], RunLabel.prototype, "platform", void 0);
-
-  RunLabel = __decorate([vue_property_decorator_1.Component], RunLabel);
-  return RunLabel;
+  SetupScheduleComponent = __decorate([vue_property_decorator_1.Component({
+    components: {
+      UpnextSchedule: UpnextScheduleComponent_vue_1.default,
+      OndeckSchedule: OndeckScheduleComponent_vue_1.default
+    }
+  })], SetupScheduleComponent);
+  return SetupScheduleComponent;
 }(vue_property_decorator_1.Vue);
 
-exports.default = RunLabel;
-        var $b6e75e = exports.default || module.exports;
+exports.default = SetupScheduleComponent;
+        var $18b9c8 = exports.default || module.exports;
       
-      if (typeof $b6e75e === 'function') {
-        $b6e75e = $b6e75e.options;
+      if (typeof $18b9c8 === 'function') {
+        $18b9c8 = $18b9c8.options;
       }
     
         /* template */
-        Object.assign($b6e75e, (function () {
+        Object.assign($18b9c8, (function () {
           var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -59751,39 +60289,21 @@ exports.default = RunLabel;
     "div",
     {
       style: {
-        display: "flex",
-        flexDirection: "column",
+        display: "inline-flex",
         width: "100%",
         height: "100%",
-        border: "3px solid " + _vm.nodecgTheme.text,
-        color: _vm.nodecgTheme.text
+        flexDirection: "column",
+        justifyContent: "space-between"
       }
     },
     [
-      _c(
-        "div",
-        {
-          style: {
-            font: "normal normal normal 36px 'Source Han Sans JP'",
-            flexGrow: "2",
-            display: "flex",
-            alignItems: "center",
-            marginLeft: "18px"
-          }
-        },
-        [_vm._v("\n    " + _vm._s(_vm.game) + "\n  ")]
-      ),
+      _c("upnext-schedule", { attrs: { "run-data": _vm.upnextRun } }),
       _vm._v(" "),
       _c(
         "div",
         {
           style: {
-            display: "flex",
-            margin: "2px 0",
-            textAlign: "right",
-            font: "normal normal normal 24px 'Source Han Sans JP'",
-            justifyContent: "flex-end",
-            alignItems: "center"
+            padding: "12px 48px"
           }
         },
         [
@@ -59791,1157 +60311,24 @@ exports.default = RunLabel;
             "div",
             {
               style: {
-                textAlign: "center",
-                padding: "0 1em",
-                borderRight: "2px solid " + _vm.nodecgTheme.text
+                color: _vm.nodecgTheme.text,
+                font: "normal normal normal 32px 'Source Han Sans JP'"
               }
             },
-            [_vm._v("\n      " + _vm._s(_vm.category) + "\n    ")]
+            [_vm._v("今後のゲーム")]
           ),
           _vm._v(" "),
-          _c(
-            "div",
-            {
-              style: {
-                padding: "0 1em"
+          _vm._l(_vm.ondeckRuns, function(run, idx) {
+            return _c("ondeck-schedule", {
+              key: run.id,
+              attrs: {
+                "run-data": run,
+                "start-in": _vm.upcomingStartIn[idx + 1]
               }
-            },
-            [_vm._v("\n      " + _vm._s(_vm.platform) + "\n    ")]
-          )
-        ]
-      )
-    ]
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-          return {
-            render: render,
-            staticRenderFns: staticRenderFns,
-            _compiled: true,
-            _scopeId: null,
-            functional: undefined
-          };
-        })());
-      
-    /* hot reload */
-    (function () {
-      if (module.hot) {
-        var api = require('vue-hot-reload-api');
-        api.install(require('vue'));
-        if (api.compatible) {
-          module.hot.accept();
-          if (!module.hot.data) {
-            api.createRecord('$b6e75e', $b6e75e);
-          } else {
-            api.reload('$b6e75e', $b6e75e);
-          }
-        }
-
-        
-      }
-    })();
-},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","../../../plugin/theme":"../plugin/theme.ts","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"components/BackGround/LongNameplateBgComponent.vue":[function(require,module,exports) {
-"use strict";
-
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-var __extends = this && this.__extends || function () {
-  var _extendStatics = function extendStatics(d, b) {
-    _extendStatics = Object.setPrototypeOf || {
-      __proto__: []
-    } instanceof Array && function (d, b) {
-      d.__proto__ = b;
-    } || function (d, b) {
-      for (var p in b) {
-        if (b.hasOwnProperty(p)) d[p] = b[p];
-      }
-    };
-
-    return _extendStatics(d, b);
-  };
-
-  return function (d, b) {
-    _extendStatics(d, b);
-
-    function __() {
-      this.constructor = d;
-    }
-
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-  };
-}();
-
-var __decorate = this && this.__decorate || function (decorators, target, key, desc) {
-  var c = arguments.length,
-      r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
-      d;
-  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
-    if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-  }
-  return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var vue_property_decorator_1 = require("vue-property-decorator");
-/* global nodecg */
-
-
-var ShortNameplateBg =
-/** @class */
-function (_super) {
-  __extends(ShortNameplateBg, _super);
-
-  function ShortNameplateBg() {
-    return _super !== null && _super.apply(this, arguments) || this;
-  }
-
-  ShortNameplateBg = __decorate([vue_property_decorator_1.Component], ShortNameplateBg);
-  return ShortNameplateBg;
-}(vue_property_decorator_1.Vue);
-
-exports.default = ShortNameplateBg;
-        var $e23854 = exports.default || module.exports;
-      
-      if (typeof $e23854 === 'function') {
-        $e23854 = $e23854.options;
-      }
-    
-        /* template */
-        Object.assign($e23854, (function () {
-          var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "svg",
-      {
-        class: {
-          mirrored: _vm.mirror
-        },
-        attrs: {
-          xmlns: "http://www.w3.org/2000/svg",
-          width: "898",
-          height: "56.536",
-          viewBox: "0 0 898 56.536",
-          transform: "scale(-1, -1)"
-        }
-      },
-      [
-        _c("g", { attrs: { transform: "translate(-1.5 3.536)" } }, [
-          _c("path", {
-            staticClass: "a",
-            attrs: { d: "M851.944,0H0", transform: "translate(47.556 1.5)" }
-          }),
-          _vm._v(" "),
-          _c("path", {
-            staticClass: "a",
-            attrs: { d: "M0,37.185,37.185,0", transform: "translate(15.313)" }
-          }),
-          _vm._v(" "),
-          _c(
-            "g",
-            { staticClass: "b", attrs: { transform: "translate(1.5 33)" } },
-            [
-              _c("circle", {
-                staticClass: "c",
-                attrs: { cx: "10", cy: "10", r: "10" }
-              }),
-              _vm._v(" "),
-              _c("circle", {
-                staticClass: "d",
-                attrs: { cx: "10", cy: "10", r: "7.5" }
-              })
-            ]
-          )
-        ])
-      ]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        style: {
-          position: "absolute",
-          left: "0px",
-          top: "0px",
-          width: "100%",
-          height: "100%"
-        }
-      },
-      [_vm._t("default")],
-      2
-    )
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-
-          return {
-            render: render,
-            staticRenderFns: staticRenderFns,
-            _compiled: true,
-            _scopeId: "data-v-e23854",
-            functional: undefined
-          };
-        })());
-      
-    /* hot reload */
-    (function () {
-      if (module.hot) {
-        var api = require('vue-hot-reload-api');
-        api.install(require('vue'));
-        if (api.compatible) {
-          module.hot.accept();
-          if (!module.hot.data) {
-            api.createRecord('$e23854', $e23854);
-          } else {
-            api.reload('$e23854', $e23854);
-          }
-        }
-
-        
-        var reloadCSS = require('_css_loader');
-        module.hot.dispose(reloadCSS);
-        module.hot.accept(reloadCSS);
-      
-      }
-    })();
-},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"components/BackGround/LongNameplateBgReversedComponent.vue":[function(require,module,exports) {
-"use strict";
-
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-var __extends = this && this.__extends || function () {
-  var _extendStatics = function extendStatics(d, b) {
-    _extendStatics = Object.setPrototypeOf || {
-      __proto__: []
-    } instanceof Array && function (d, b) {
-      d.__proto__ = b;
-    } || function (d, b) {
-      for (var p in b) {
-        if (b.hasOwnProperty(p)) d[p] = b[p];
-      }
-    };
-
-    return _extendStatics(d, b);
-  };
-
-  return function (d, b) {
-    _extendStatics(d, b);
-
-    function __() {
-      this.constructor = d;
-    }
-
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-  };
-}();
-
-var __decorate = this && this.__decorate || function (decorators, target, key, desc) {
-  var c = arguments.length,
-      r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
-      d;
-  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
-    if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-  }
-  return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var vue_property_decorator_1 = require("vue-property-decorator");
-/* global nodecg */
-
-
-var ShortNameplateBg =
-/** @class */
-function (_super) {
-  __extends(ShortNameplateBg, _super);
-
-  function ShortNameplateBg() {
-    return _super !== null && _super.apply(this, arguments) || this;
-  }
-
-  ShortNameplateBg = __decorate([vue_property_decorator_1.Component], ShortNameplateBg);
-  return ShortNameplateBg;
-}(vue_property_decorator_1.Vue);
-
-exports.default = ShortNameplateBg;
-        var $e93b75 = exports.default || module.exports;
-      
-      if (typeof $e93b75 === 'function') {
-        $e93b75 = $e93b75.options;
-      }
-    
-        /* template */
-        Object.assign($e93b75, (function () {
-          var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "svg",
-      {
-        class: {
-          mirrored: _vm.mirror
-        },
-        attrs: {
-          xmlns: "http://www.w3.org/2000/svg",
-          width: "898",
-          height: "56.536",
-          viewBox: "0 0 898 56.536",
-          transform: "scale(1, -1)"
-        }
-      },
-      [
-        _c("g", { attrs: { transform: "translate(-1.5 3.536)" } }, [
-          _c("path", {
-            staticClass: "a",
-            attrs: { d: "M851.944,0H0", transform: "translate(47.556 1.5)" }
-          }),
-          _vm._v(" "),
-          _c("path", {
-            staticClass: "a",
-            attrs: { d: "M0,37.185,37.185,0", transform: "translate(15.313)" }
-          }),
-          _vm._v(" "),
-          _c(
-            "g",
-            { staticClass: "b", attrs: { transform: "translate(1.5 33)" } },
-            [
-              _c("circle", {
-                staticClass: "c",
-                attrs: { cx: "10", cy: "10", r: "10" }
-              }),
-              _vm._v(" "),
-              _c("circle", {
-                staticClass: "d",
-                attrs: { cx: "10", cy: "10", r: "7.5" }
-              })
-            ]
-          )
-        ])
-      ]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        style: {
-          position: "absolute",
-          left: "0px",
-          top: "0px",
-          width: "100%",
-          height: "100%"
-        }
-      },
-      [_vm._t("default")],
-      2
-    )
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-
-          return {
-            render: render,
-            staticRenderFns: staticRenderFns,
-            _compiled: true,
-            _scopeId: "data-v-e93b75",
-            functional: undefined
-          };
-        })());
-      
-    /* hot reload */
-    (function () {
-      if (module.hot) {
-        var api = require('vue-hot-reload-api');
-        api.install(require('vue'));
-        if (api.compatible) {
-          module.hot.accept();
-          if (!module.hot.data) {
-            api.createRecord('$e93b75', $e93b75);
-          } else {
-            api.reload('$e93b75', $e93b75);
-          }
-        }
-
-        
-        var reloadCSS = require('_css_loader');
-        module.hot.dispose(reloadCSS);
-        module.hot.accept(reloadCSS);
-      
-      }
-    })();
-},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"components/Nameplate/RaceNameplate.vue":[function(require,module,exports) {
-"use strict";
-
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-var __extends = this && this.__extends || function () {
-  var _extendStatics = function extendStatics(d, b) {
-    _extendStatics = Object.setPrototypeOf || {
-      __proto__: []
-    } instanceof Array && function (d, b) {
-      d.__proto__ = b;
-    } || function (d, b) {
-      for (var p in b) {
-        if (b.hasOwnProperty(p)) d[p] = b[p];
-      }
-    };
-
-    return _extendStatics(d, b);
-  };
-
-  return function (d, b) {
-    _extendStatics(d, b);
-
-    function __() {
-      this.constructor = d;
-    }
-
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-  };
-}();
-
-var __decorate = this && this.__decorate || function (decorators, target, key, desc) {
-  var c = arguments.length,
-      r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
-      d;
-  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
-    if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-  }
-  return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var vue_property_decorator_1 = require("vue-property-decorator");
-
-var LongNameplateBgComponent_vue_1 = __importDefault(require("../../components/BackGround/LongNameplateBgComponent.vue"));
-
-var LongNameplateBgReversedComponent_vue_1 = __importDefault(require("../../components/BackGround/LongNameplateBgReversedComponent.vue"));
-
-var theme_1 = require("../../../plugin/theme");
-
-var RaceNameplate =
-/** @class */
-function (_super) {
-  __extends(RaceNameplate, _super);
-
-  function RaceNameplate() {
-    return _super !== null && _super.apply(this, arguments) || this;
-  }
-
-  Object.defineProperty(RaceNameplate.prototype, "nodecgTheme", {
-    get: function get() {
-      return theme_1.theme;
-    },
-    enumerable: false,
-    configurable: true
-  });
-
-  __decorate([vue_property_decorator_1.Prop(Number)], RaceNameplate.prototype, "displaySocial", void 0);
-
-  __decorate([vue_property_decorator_1.Prop(String)], RaceNameplate.prototype, "name", void 0);
-
-  __decorate([vue_property_decorator_1.Prop(Boolean)], RaceNameplate.prototype, "isRunner", void 0);
-
-  __decorate([vue_property_decorator_1.Prop(Object)], RaceNameplate.prototype, "social", void 0);
-
-  __decorate([vue_property_decorator_1.Prop({
-    default: false
-  })], RaceNameplate.prototype, "isRight", void 0);
-
-  __decorate([vue_property_decorator_1.Prop(String)], RaceNameplate.prototype, "time", void 0);
-
-  RaceNameplate = __decorate([vue_property_decorator_1.Component({
-    components: {
-      LongNameplateBg: LongNameplateBgComponent_vue_1.default,
-      LongNameplateBgReversed: LongNameplateBgReversedComponent_vue_1.default
-    }
-  })], RaceNameplate);
-  return RaceNameplate;
-}(vue_property_decorator_1.Vue);
-
-exports.default = RaceNameplate;
-        var $e3f0fe = exports.default || module.exports;
-      
-      if (typeof $e3f0fe === 'function') {
-        $e3f0fe = $e3f0fe.options;
-      }
-    
-        /* template */
-        Object.assign($e3f0fe, (function () {
-          var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {
-      class: {
-        right: _vm.isRight
-      },
-      style: {
-        width: "100%",
-        height: "100%",
-        color: _vm.nodecgTheme.text
-      }
-    },
-    [
-      _c(
-        "div",
-        {
-          staticClass: "label",
-          style: {
-            color: _vm.nodecgTheme.secondary
-          }
-        },
-        [_vm._v(_vm._s(_vm.isRunner ? "Runner" : "Commentator"))]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          style: {
-            position: "relative",
-            marginTop: "8px"
-          }
-        },
-        [
-          !_vm.isRight
-            ? _c("long-nameplate-bg", [
-                _c(
-                  "div",
-                  {
-                    staticClass: "bg",
-                    style: {
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "flex-end",
-                      width: "100%",
-                      height: "65px"
-                    }
-                  },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "info",
-                        style: {
-                          display: "flex",
-                          flexDirection: "column",
-                          justifyContent: "space-between",
-                          font: "normal normal normal 32px 'Ubuntu Mono'"
-                        }
-                      },
-                      [
-                        _c(
-                          "transition",
-                          { attrs: { name: "social", mode: "out-in" } },
-                          [
-                            _vm.displaySocial === 0 && _vm.social.twitch
-                              ? _c(
-                                  "div",
-                                  { key: "twitch", staticClass: "account" },
-                                  [
-                                    _c("span", { staticClass: "icon" }, [
-                                      _c("i", { staticClass: "fab fa-twitch" })
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("span", [
-                                      _vm._v(_vm._s(_vm.social.twitch))
-                                    ])
-                                  ]
-                                )
-                              : _vm.displaySocial === 1 && _vm.social.nico
-                              ? _c(
-                                  "div",
-                                  { key: "nico", staticClass: "account" },
-                                  [
-                                    _c("span", [
-                                      _vm._v(_vm._s(_vm.social.nico))
-                                    ])
-                                  ]
-                                )
-                              : _vm.displaySocial === 2 && _vm.social.youtube
-                              ? _c(
-                                  "div",
-                                  { key: "youtube", staticClass: "account" },
-                                  [
-                                    _c("span", { staticClass: "icon" }, [
-                                      _c("i", { staticClass: "fab fa-youtube" })
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("span", [
-                                      _vm._v(_vm._s(_vm.social.youtube))
-                                    ])
-                                  ]
-                                )
-                              : _vm.displaySocial === 3 && _vm.social.twitter
-                              ? _c(
-                                  "div",
-                                  { key: "twitter", staticClass: "account" },
-                                  [
-                                    _c("span", { staticClass: "icon" }, [
-                                      _c("i", { staticClass: "fab fa-twitter" })
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("span", [
-                                      _vm._v(_vm._s(_vm.social.twitter))
-                                    ])
-                                  ]
-                                )
-                              : _c("div", {
-                                  key: "blank",
-                                  staticClass: "account"
-                                })
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", [
-                          _vm._v(
-                            "\n          " + _vm._s(_vm.time) + "\n        "
-                          )
-                        ])
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "name" }, [
-                      _vm._v("\n        " + _vm._s(_vm.name) + "\n      ")
-                    ])
-                  ]
-                )
-              ])
-            : _c("long-nameplate-bg-reversed", [
-                _c(
-                  "div",
-                  {
-                    staticClass: "bg",
-                    style: {
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "flex-end",
-                      width: "100%",
-                      height: "65px"
-                    }
-                  },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "info",
-                        style: {
-                          display: "flex",
-                          flexDirection: "column",
-                          justifyContent: "space-between",
-                          font: "normal normal normal 32px 'Ubuntu Mono'"
-                        }
-                      },
-                      [
-                        _c(
-                          "transition",
-                          { attrs: { name: "social", mode: "out-in" } },
-                          [
-                            _vm.displaySocial === 0 && _vm.social.twitch
-                              ? _c(
-                                  "div",
-                                  { key: "twitch", staticClass: "account" },
-                                  [
-                                    _c("span", { staticClass: "icon" }, [
-                                      _c("i", { staticClass: "fab fa-twitch" })
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("span", [
-                                      _vm._v(_vm._s(_vm.social.twitch))
-                                    ])
-                                  ]
-                                )
-                              : _vm.displaySocial === 1 && _vm.social.nico
-                              ? _c(
-                                  "div",
-                                  { key: "nico", staticClass: "account" },
-                                  [
-                                    _c("span", [
-                                      _vm._v(_vm._s(_vm.social.nico))
-                                    ])
-                                  ]
-                                )
-                              : _vm.displaySocial === 2 && _vm.social.youtube
-                              ? _c(
-                                  "div",
-                                  { key: "youtube", staticClass: "account" },
-                                  [
-                                    _c("span", { staticClass: "icon" }, [
-                                      _c("i", { staticClass: "fab fa-youtube" })
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("span", [
-                                      _vm._v(_vm._s(_vm.social.youtube))
-                                    ])
-                                  ]
-                                )
-                              : _vm.displaySocial === 3 && _vm.social.twitter
-                              ? _c(
-                                  "div",
-                                  { key: "twitter", staticClass: "account" },
-                                  [
-                                    _c("span", { staticClass: "icon" }, [
-                                      _c("i", { staticClass: "fab fa-twitter" })
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("span", [
-                                      _vm._v(_vm._s(_vm.social.twitter))
-                                    ])
-                                  ]
-                                )
-                              : _c("div", {
-                                  key: "blank",
-                                  staticClass: "account"
-                                })
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", [
-                          _vm._v(
-                            "\n          " + _vm._s(_vm.time) + "\n        "
-                          )
-                        ])
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "name" }, [
-                      _vm._v("\n        " + _vm._s(_vm.name) + "\n      ")
-                    ])
-                  ]
-                )
-              ])
+            })
+          })
         ],
-        1
-      )
-    ]
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-          return {
-            render: render,
-            staticRenderFns: staticRenderFns,
-            _compiled: true,
-            _scopeId: "data-v-e3f0fe",
-            functional: undefined
-          };
-        })());
-      
-    /* hot reload */
-    (function () {
-      if (module.hot) {
-        var api = require('vue-hot-reload-api');
-        api.install(require('vue'));
-        if (api.compatible) {
-          module.hot.accept();
-          if (!module.hot.data) {
-            api.createRecord('$e3f0fe', $e3f0fe);
-          } else {
-            api.reload('$e3f0fe', $e3f0fe);
-          }
-        }
-
-        
-        var reloadCSS = require('_css_loader');
-        module.hot.dispose(reloadCSS);
-        module.hot.accept(reloadCSS);
-      
-      }
-    })();
-},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","../../components/BackGround/LongNameplateBgComponent.vue":"components/BackGround/LongNameplateBgComponent.vue","../../components/BackGround/LongNameplateBgReversedComponent.vue":"components/BackGround/LongNameplateBgReversedComponent.vue","../../../plugin/theme":"../plugin/theme.ts","_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"components/BackGround/StraightNameplateBgComponent.vue":[function(require,module,exports) {
-"use strict";
-
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-var __extends = this && this.__extends || function () {
-  var _extendStatics = function extendStatics(d, b) {
-    _extendStatics = Object.setPrototypeOf || {
-      __proto__: []
-    } instanceof Array && function (d, b) {
-      d.__proto__ = b;
-    } || function (d, b) {
-      for (var p in b) {
-        if (b.hasOwnProperty(p)) d[p] = b[p];
-      }
-    };
-
-    return _extendStatics(d, b);
-  };
-
-  return function (d, b) {
-    _extendStatics(d, b);
-
-    function __() {
-      this.constructor = d;
-    }
-
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-  };
-}();
-
-var __decorate = this && this.__decorate || function (decorators, target, key, desc) {
-  var c = arguments.length,
-      r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
-      d;
-  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
-    if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-  }
-  return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var vue_property_decorator_1 = require("vue-property-decorator");
-/* global nodecg */
-
-
-var StraightNameplateBg =
-/** @class */
-function (_super) {
-  __extends(StraightNameplateBg, _super);
-
-  function StraightNameplateBg() {
-    return _super !== null && _super.apply(this, arguments) || this;
-  }
-
-  StraightNameplateBg = __decorate([vue_property_decorator_1.Component], StraightNameplateBg);
-  return StraightNameplateBg;
-}(vue_property_decorator_1.Vue);
-
-exports.default = StraightNameplateBg;
-        var $355918 = exports.default || module.exports;
-      
-      if (typeof $355918 === 'function') {
-        $355918 = $355918.options;
-      }
-    
-        /* template */
-        Object.assign($355918, (function () {
-          var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _vm._t("default"),
-      _vm._v(" "),
-      _c(
-        "svg",
-        {
-          attrs: {
-            xmlns: "http://www.w3.org/2000/svg",
-            width: "490",
-            height: "20",
-            viewBox: "0 0 490 20"
-          }
-        },
-        [
-          _c("g", { attrs: { transform: "translate(-715 -862)" } }, [
-            _c("line", {
-              staticClass: "a",
-              attrs: { x2: "454", transform: "translate(733 872)" }
-            }),
-            _vm._v(" "),
-            _c(
-              "g",
-              {
-                staticClass: "b",
-                attrs: {
-                  transform: "translate(735 882) rotate(180)",
-                  stroke: _vm.color
-                }
-              },
-              [
-                _c("circle", {
-                  staticClass: "c",
-                  attrs: { cx: "10", cy: "10", r: "10" }
-                }),
-                _vm._v(" "),
-                _c("circle", {
-                  staticClass: "d",
-                  attrs: { cx: "10", cy: "10", r: "7.5" }
-                })
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "g",
-              {
-                staticClass: "b",
-                attrs: {
-                  transform: "translate(1205 882) rotate(180)",
-                  stroke: _vm.color
-                }
-              },
-              [
-                _c("circle", {
-                  staticClass: "c",
-                  attrs: { cx: "10", cy: "10", r: "10" }
-                }),
-                _vm._v(" "),
-                _c("circle", {
-                  staticClass: "d",
-                  attrs: { cx: "10", cy: "10", r: "7.5" }
-                })
-              ]
-            )
-          ])
-        ]
-      )
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-          return {
-            render: render,
-            staticRenderFns: staticRenderFns,
-            _compiled: true,
-            _scopeId: "data-v-355918",
-            functional: undefined
-          };
-        })());
-      
-    /* hot reload */
-    (function () {
-      if (module.hot) {
-        var api = require('vue-hot-reload-api');
-        api.install(require('vue'));
-        if (api.compatible) {
-          module.hot.accept();
-          if (!module.hot.data) {
-            api.createRecord('$355918', $355918);
-          } else {
-            api.reload('$355918', $355918);
-          }
-        }
-
-        
-        var reloadCSS = require('_css_loader');
-        module.hot.dispose(reloadCSS);
-        module.hot.accept(reloadCSS);
-      
-      }
-    })();
-},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"components/Nameplate/RaceCommentatorNameplate.vue":[function(require,module,exports) {
-"use strict";
-
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-var __extends = this && this.__extends || function () {
-  var _extendStatics = function extendStatics(d, b) {
-    _extendStatics = Object.setPrototypeOf || {
-      __proto__: []
-    } instanceof Array && function (d, b) {
-      d.__proto__ = b;
-    } || function (d, b) {
-      for (var p in b) {
-        if (b.hasOwnProperty(p)) d[p] = b[p];
-      }
-    };
-
-    return _extendStatics(d, b);
-  };
-
-  return function (d, b) {
-    _extendStatics(d, b);
-
-    function __() {
-      this.constructor = d;
-    }
-
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-  };
-}();
-
-var __decorate = this && this.__decorate || function (decorators, target, key, desc) {
-  var c = arguments.length,
-      r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
-      d;
-  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
-    if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-  }
-  return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var vue_property_decorator_1 = require("vue-property-decorator");
-
-var StraightNameplateBgComponent_vue_1 = __importDefault(require("../../components/BackGround/StraightNameplateBgComponent.vue"));
-
-var theme_1 = require("../../../plugin/theme");
-
-var RaceCommentatorNameplate =
-/** @class */
-function (_super) {
-  __extends(RaceCommentatorNameplate, _super);
-
-  function RaceCommentatorNameplate() {
-    return _super !== null && _super.apply(this, arguments) || this;
-  }
-
-  Object.defineProperty(RaceCommentatorNameplate.prototype, "nodecgTheme", {
-    get: function get() {
-      return theme_1.theme;
-    },
-    enumerable: false,
-    configurable: true
-  });
-
-  __decorate([vue_property_decorator_1.Prop(Number)], RaceCommentatorNameplate.prototype, "displaySocial", void 0);
-
-  __decorate([vue_property_decorator_1.Prop(String)], RaceCommentatorNameplate.prototype, "name", void 0);
-
-  __decorate([vue_property_decorator_1.Prop(Boolean)], RaceCommentatorNameplate.prototype, "isRunner", void 0);
-
-  __decorate([vue_property_decorator_1.Prop(Object)], RaceCommentatorNameplate.prototype, "social", void 0);
-
-  __decorate([vue_property_decorator_1.Prop({
-    default: false
-  })], RaceCommentatorNameplate.prototype, "isRight", void 0);
-
-  __decorate([vue_property_decorator_1.Prop(String)], RaceCommentatorNameplate.prototype, "time", void 0);
-
-  RaceCommentatorNameplate = __decorate([vue_property_decorator_1.Component({
-    components: {
-      StraightNameplateBg: StraightNameplateBgComponent_vue_1.default
-    }
-  })], RaceCommentatorNameplate);
-  return RaceCommentatorNameplate;
-}(vue_property_decorator_1.Vue);
-
-exports.default = RaceCommentatorNameplate;
-        var $db72b2 = exports.default || module.exports;
-      
-      if (typeof $db72b2 === 'function') {
-        $db72b2 = $db72b2.options;
-      }
-    
-        /* template */
-        Object.assign($db72b2, (function () {
-          var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {
-      class: {
-        right: _vm.isRight
-      },
-      style: {
-        width: "100%",
-        height: "100%",
-        color: _vm.nodecgTheme.text
-      }
-    },
-    [
-      _c(
-        "div",
-        {
-          style: {
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "flex-end",
-            width: "100%",
-            height: "92px",
-            padding: "0 24px",
-            marginBottom: "-6px"
-          }
-        },
-        [
-          _c("transition", { attrs: { name: "social", mode: "out-in" } }, [
-            _vm.displaySocial === 0 && _vm.social.twitch
-              ? _c("div", { key: "twitch", staticClass: "account" }, [
-                  _c("span", { staticClass: "icon" }, [
-                    _c("i", { staticClass: "fab fa-twitch" })
-                  ]),
-                  _vm._v(" "),
-                  _c("span", [_vm._v(_vm._s(_vm.social.twitch))])
-                ])
-              : _vm.displaySocial === 1 && _vm.social.nico
-              ? _c("div", { key: "nico", staticClass: "account" }, [
-                  _c("span", [_vm._v(_vm._s(_vm.social.nico))])
-                ])
-              : _vm.displaySocial === 2 && _vm.social.youtube
-              ? _c("div", { key: "youtube", staticClass: "account" }, [
-                  _c("span", { staticClass: "icon" }, [
-                    _c("i", { staticClass: "fab fa-youtube" })
-                  ]),
-                  _vm._v(" "),
-                  _c("span", [_vm._v(_vm._s(_vm.social.youtube))])
-                ])
-              : _vm.displaySocial === 3 && _vm.social.twitter
-              ? _c("div", { key: "twitter", staticClass: "account" }, [
-                  _c("span", { staticClass: "icon" }, [
-                    _c("i", { staticClass: "fab fa-twitter" })
-                  ]),
-                  _vm._v(" "),
-                  _c("span", [_vm._v(_vm._s(_vm.social.twitter))])
-                ])
-              : _c("div", { key: "blank", staticClass: "account" })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "name" }, [
-            _vm._v("\n        " + _vm._s(_vm.name) + "\n      ")
-          ])
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("straight-nameplate-bg"),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "label",
-          style: {
-            color: _vm.nodecgTheme.secondary,
-            marginTop: "-8px"
-          }
-        },
-        [_vm._v("\n    Commentator\n  ")]
+        2
       )
     ],
     1
@@ -60954,7 +60341,7 @@ render._withStripped = true
             render: render,
             staticRenderFns: staticRenderFns,
             _compiled: true,
-            _scopeId: "data-v-db72b2",
+            _scopeId: null,
             functional: undefined
           };
         })());
@@ -60967,212 +60354,16 @@ render._withStripped = true
         if (api.compatible) {
           module.hot.accept();
           if (!module.hot.data) {
-            api.createRecord('$db72b2', $db72b2);
+            api.createRecord('$18b9c8', $18b9c8);
           } else {
-            api.reload('$db72b2', $db72b2);
+            api.reload('$18b9c8', $18b9c8);
           }
         }
 
         
-        var reloadCSS = require('_css_loader');
-        module.hot.dispose(reloadCSS);
-        module.hot.accept(reloadCSS);
-      
       }
     })();
-},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","../../components/BackGround/StraightNameplateBgComponent.vue":"components/BackGround/StraightNameplateBgComponent.vue","../../../plugin/theme":"../plugin/theme.ts","_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"components/Timer/Timer.vue":[function(require,module,exports) {
-"use strict";
-
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-var __extends = this && this.__extends || function () {
-  var _extendStatics = function extendStatics(d, b) {
-    _extendStatics = Object.setPrototypeOf || {
-      __proto__: []
-    } instanceof Array && function (d, b) {
-      d.__proto__ = b;
-    } || function (d, b) {
-      for (var p in b) {
-        if (b.hasOwnProperty(p)) d[p] = b[p];
-      }
-    };
-
-    return _extendStatics(d, b);
-  };
-
-  return function (d, b) {
-    _extendStatics(d, b);
-
-    function __() {
-      this.constructor = d;
-    }
-
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-  };
-}();
-
-var __decorate = this && this.__decorate || function (decorators, target, key, desc) {
-  var c = arguments.length,
-      r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
-      d;
-  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
-    if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-  }
-  return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var vue_property_decorator_1 = require("vue-property-decorator");
-
-var theme_1 = require("../../../plugin/theme");
-
-var Timer =
-/** @class */
-function (_super) {
-  __extends(Timer, _super);
-
-  function Timer() {
-    return _super !== null && _super.apply(this, arguments) || this;
-  }
-
-  Object.defineProperty(Timer.prototype, "timerColor", {
-    get: function get() {
-      var colors = {
-        'stopped': theme_1.theme.timer.pause,
-        'paused': theme_1.theme.timer.pause,
-        'running': theme_1.theme.timer.running,
-        'finished': theme_1.theme.timer.finish
-      };
-      return colors[this.status] || 'white';
-    },
-    enumerable: false,
-    configurable: true
-  });
-  Object.defineProperty(Timer.prototype, "nodecgTheme", {
-    get: function get() {
-      return theme_1.theme;
-    },
-    enumerable: false,
-    configurable: true
-  });
-
-  __decorate([vue_property_decorator_1.Prop(String)], Timer.prototype, "status", void 0);
-
-  __decorate([vue_property_decorator_1.Prop(String)], Timer.prototype, "time", void 0);
-
-  __decorate([vue_property_decorator_1.Prop(String)], Timer.prototype, "estimate", void 0);
-
-  Timer = __decorate([vue_property_decorator_1.Component], Timer);
-  return Timer;
-}(vue_property_decorator_1.Vue);
-
-exports.default = Timer;
-        var $4a7e4f = exports.default || module.exports;
-      
-      if (typeof $4a7e4f === 'function') {
-        $4a7e4f = $4a7e4f.options;
-      }
-    
-        /* template */
-        Object.assign($4a7e4f, (function () {
-          var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {
-      style: {
-        display: "flex",
-        width: "100%",
-        height: "100%",
-        border: "3px solid " + _vm.nodecgTheme.text,
-        color: _vm.nodecgTheme.text,
-        padding: "20px 35px 8px"
-      }
-    },
-    [
-      _c(
-        "div",
-        {
-          style: {
-            width: "50%",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "flex-start"
-          }
-        },
-        [
-          _c("div", { staticClass: "label" }, [_vm._v("\n      Time\n    ")]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "value", style: { color: _vm.timerColor } },
-            [_vm._v("\n      " + _vm._s(_vm.time) + "\n    ")]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          style: {
-            width: "50%",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "flex-end"
-          }
-        },
-        [
-          _c("div", { staticClass: "label estimate" }, [
-            _vm._v("\n      Estimate\n    ")
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "value estimate" }, [
-            _vm._v("\n      " + _vm._s(_vm.estimate) + "\n    ")
-          ])
-        ]
-      )
-    ]
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-          return {
-            render: render,
-            staticRenderFns: staticRenderFns,
-            _compiled: true,
-            _scopeId: "data-v-4a7e4f",
-            functional: undefined
-          };
-        })());
-      
-    /* hot reload */
-    (function () {
-      if (module.hot) {
-        var api = require('vue-hot-reload-api');
-        api.install(require('vue'));
-        if (api.compatible) {
-          module.hot.accept();
-          if (!module.hot.data) {
-            api.createRecord('$4a7e4f', $4a7e4f);
-          } else {
-            api.reload('$4a7e4f', $4a7e4f);
-          }
-        }
-
-        
-        var reloadCSS = require('_css_loader');
-        module.hot.dispose(reloadCSS);
-        module.hot.accept(reloadCSS);
-      
-      }
-    })();
-},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","../../../plugin/theme":"../plugin/theme.ts","_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"views/RaceGameView.vue":[function(require,module,exports) {
+},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","./UpnextScheduleComponent.vue":"components/SetupSchedule/UpnextScheduleComponent.vue","./OndeckScheduleComponent.vue":"components/SetupSchedule/OndeckScheduleComponent.vue","../../../plugin/speedcontrol":"../plugin/speedcontrol.ts","../../../plugin/additions":"../plugin/additions.ts","../../_lib/util":"_lib/util.ts","../../../plugin/theme":"../plugin/theme.ts","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"Setup/main.vue":[function(require,module,exports) {
 "use strict";
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -61225,184 +60416,40 @@ Object.defineProperty(exports, "__esModule", {
 
 var vue_property_decorator_1 = require("vue-property-decorator");
 
-var GameView_vue_1 = __importDefault(require("./GameView.vue"));
+var SetupScheduleComponent_vue_1 = __importDefault(require("../components/SetupSchedule/SetupScheduleComponent.vue"));
 
-var RunLabel_vue_1 = __importDefault(require("../components/RunLabel/RunLabel.vue"));
-
-var RaceNameplate_vue_1 = __importDefault(require("../components/Nameplate/RaceNameplate.vue"));
-
-var RaceCommentatorNameplate_vue_1 = __importDefault(require("../components/Nameplate/RaceCommentatorNameplate.vue"));
-
-var Timer_vue_1 = __importDefault(require("../components/Timer/Timer.vue"));
-
-var gameViewModule_1 = require("../_lib/gameViewModule");
-
-var RaceGameView =
+var App =
 /** @class */
 function (_super) {
-  __extends(RaceGameView, _super);
+  __extends(App, _super);
 
-  function RaceGameView() {
+  function App() {
     return _super !== null && _super.apply(this, arguments) || this;
   }
 
-  Object.defineProperty(RaceGameView.prototype, "currentTime", {
-    get: function get() {
-      return gameViewModule_1.gameViewModule.currentTime.time;
-    },
-    enumerable: false,
-    configurable: true
-  });
-  Object.defineProperty(RaceGameView.prototype, "runStatus", {
-    get: function get() {
-      return gameViewModule_1.gameViewModule.runStatus;
-    },
-    enumerable: false,
-    configurable: true
-  });
-  Object.defineProperty(RaceGameView.prototype, "runData", {
-    get: function get() {
-      return gameViewModule_1.gameViewModule.runData;
-    },
-    enumerable: false,
-    configurable: true
-  });
-  Object.defineProperty(RaceGameView.prototype, "displaySocial", {
-    get: function get() {
-      return gameViewModule_1.gameViewModule.existsSocials[gameViewModule_1.gameViewModule.displaySocialIndex];
-    },
-    enumerable: false,
-    configurable: true
-  });
-  Object.defineProperty(RaceGameView.prototype, "runners", {
-    get: function get() {
-      return gameViewModule_1.gameViewModule.runners;
-    },
-    enumerable: false,
-    configurable: true
-  });
-  Object.defineProperty(RaceGameView.prototype, "commentator", {
-    get: function get() {
-      return gameViewModule_1.gameViewModule.commentator;
-    },
-    enumerable: false,
-    configurable: true
-  });
-
-  __decorate([vue_property_decorator_1.Prop(Array)], RaceGameView.prototype, "clipPaths", void 0);
-
-  RaceGameView = __decorate([vue_property_decorator_1.Component({
+  App = __decorate([vue_property_decorator_1.Component({
     components: {
-      GameView: GameView_vue_1.default,
-      RunLabel: RunLabel_vue_1.default,
-      Nameplate: RaceNameplate_vue_1.default,
-      CommentatorNameplate: RaceCommentatorNameplate_vue_1.default,
-      Timer: Timer_vue_1.default
+      SetupSchedule: SetupScheduleComponent_vue_1.default
     }
-  })], RaceGameView);
-  return RaceGameView;
+  })], App);
+  return App;
 }(vue_property_decorator_1.Vue);
 
-exports.default = RaceGameView;
-        var $992065 = exports.default || module.exports;
+exports.default = App;
+        var $af0e95 = exports.default || module.exports;
       
-      if (typeof $992065 === 'function') {
-        $992065 = $992065.options;
+      if (typeof $af0e95 === 'function') {
+        $af0e95 = $af0e95.options;
       }
     
         /* template */
-        Object.assign($992065, (function () {
+        Object.assign($af0e95, (function () {
           var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("game-view", { attrs: { "clip-paths": _vm.clipPaths } }, [
-    _c(
-      "div",
-      { staticClass: "games" },
-      [
-        _c("run-label", {
-          attrs: {
-            game: _vm.runData.game,
-            category: _vm.runData.category,
-            platform: _vm.runData.platform
-          }
-        })
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "timer" },
-      [
-        _c("timer", {
-          attrs: {
-            estimate: _vm.runData.estimate,
-            time: _vm.currentTime,
-            status: _vm.runStatus
-          }
-        })
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "runner-left" },
-      [
-        _vm.runners[0]
-          ? _c("nameplate", {
-              attrs: {
-                "display-social": _vm.displaySocial,
-                name: _vm.runners[0].name,
-                "is-runner": true,
-                social: _vm.runners[0].social,
-                time: _vm.runners[0].time
-              }
-            })
-          : _vm._e()
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "runner-right" },
-      [
-        _vm.runners[1]
-          ? _c("nameplate", {
-              attrs: {
-                "display-social": _vm.displaySocial,
-                name: _vm.runners[1].name,
-                "is-runner": true,
-                social: _vm.runners[1].social,
-                "is-right": true,
-                time: _vm.runners[1].time
-              }
-            })
-          : _vm._e()
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "commentator" },
-      [
-        _vm.commentator.name !== ""
-          ? _c("commentator-nameplate", {
-              attrs: {
-                "display-social": _vm.displaySocial,
-                name: _vm.commentator.name,
-                "is-runner": false,
-                social: _vm.commentator.social
-              }
-            })
-          : _vm._e()
-      ],
-      1
-    )
+  return _c("div", [
+    _c("div", { staticClass: "schedule" }, [_c("setup-schedule")], 1)
   ])
 }
 var staticRenderFns = []
@@ -61412,7 +60459,7 @@ render._withStripped = true
             render: render,
             staticRenderFns: staticRenderFns,
             _compiled: true,
-            _scopeId: null,
+            _scopeId: "data-v-af0e95",
             functional: undefined
           };
         })());
@@ -61425,9 +60472,9 @@ render._withStripped = true
         if (api.compatible) {
           module.hot.accept();
           if (!module.hot.data) {
-            api.createRecord('$992065', $992065);
+            api.createRecord('$af0e95', $af0e95);
           } else {
-            api.reload('$992065', $992065);
+            api.reload('$af0e95', $af0e95);
           }
         }
 
@@ -61438,7 +60485,7 @@ render._withStripped = true
       
       }
     })();
-},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","./GameView.vue":"views/GameView.vue","../components/RunLabel/RunLabel.vue":"components/RunLabel/RunLabel.vue","../components/Nameplate/RaceNameplate.vue":"components/Nameplate/RaceNameplate.vue","../components/Nameplate/RaceCommentatorNameplate.vue":"components/Nameplate/RaceCommentatorNameplate.vue","../components/Timer/Timer.vue":"components/Timer/Timer.vue","../_lib/gameViewModule":"_lib/gameViewModule.ts","_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"SD_race/index.ts":[function(require,module,exports) {
+},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","../components/SetupSchedule/SetupScheduleComponent.vue":"components/SetupSchedule/SetupScheduleComponent.vue","_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"Setup/index.ts":[function(require,module,exports) {
 "use strict";
 /* eslint no-new: off, @typescript-eslint/explicit-function-return-type: off */
 
@@ -61458,31 +60505,17 @@ var store_1 = __importDefault(require("../../plugin/store"));
 
 var vuetify_1 = __importDefault(require("../../plugin/vuetify"));
 
-var RaceGameView_vue_1 = __importDefault(require("../views/RaceGameView.vue"));
+var main_vue_1 = __importDefault(require("./main.vue"));
 
 new vue_1.default({
   store: store_1.default,
   vuetify: vuetify_1.default,
   el: '#app',
   render: function render(h) {
-    return h(RaceGameView_vue_1.default, {
-      props: {
-        clipPaths: [{
-          x: 0,
-          y: 0,
-          width: 900,
-          height: 675
-        }, {
-          x: 1020,
-          y: 0,
-          width: 900,
-          height: 675
-        }]
-      }
-    });
+    return h(main_vue_1.default);
   }
 });
-},{"vue":"../../../node_modules/vue/dist/vue.runtime.esm.js","../../plugin/store":"../plugin/store.ts","../../plugin/vuetify":"../plugin/vuetify.ts","../views/RaceGameView.vue":"views/RaceGameView.vue"}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"vue":"../../../node_modules/vue/dist/vue.runtime.esm.js","../../plugin/store":"../plugin/store.ts","../../plugin/vuetify":"../plugin/vuetify.ts","./main.vue":"Setup/main.vue"}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -61686,5 +60719,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","SD_race/index.ts"], null)
-//# sourceMappingURL=SD_race.b6b19ae9.js.map
+},{}]},{},["../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","Setup/index.ts"], null)
+//# sourceMappingURL=Setup.5f056c3f.js.map
