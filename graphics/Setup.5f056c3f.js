@@ -59941,7 +59941,8 @@ exports.default = SetupScheduleComponent;
     "div",
     {
       style: {
-        color: _vm.nodecgTheme.text
+        color: _vm.nodecgTheme.text,
+        marginBottom: "16px"
       }
     },
     [
@@ -59964,7 +59965,24 @@ exports.default = SetupScheduleComponent;
         ]
       ),
       _vm._v(" "),
-      _c("long-straight-nameplate-bg")
+      _c("long-straight-nameplate-bg"),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          style: {
+            display: "flex",
+            justifyContent: "flex-end"
+          }
+        },
+        [
+          _c("div", { staticClass: "info" }, [
+            _c("span", [_vm._v(_vm._s(_vm.runData.category))]),
+            _vm._v("\n      |\n      "),
+            _c("span", [_vm._v(_vm._s(_vm.runData.system))])
+          ])
+        ]
+      )
     ],
     1
   )
@@ -60299,37 +60317,39 @@ exports.default = SetupScheduleComponent;
     [
       _c("upnext-schedule", { attrs: { "run-data": _vm.upnextRun } }),
       _vm._v(" "),
-      _c(
-        "div",
-        {
-          style: {
-            padding: "12px 48px"
-          }
-        },
-        [
-          _c(
+      _vm.ondeckRuns.length > 0
+        ? _c(
             "div",
             {
               style: {
-                color: _vm.nodecgTheme.text,
-                font: "normal normal normal 32px 'Source Han Sans JP'"
+                padding: "12px 48px"
               }
             },
-            [_vm._v("今後のゲーム")]
-          ),
-          _vm._v(" "),
-          _vm._l(_vm.ondeckRuns, function(run, idx) {
-            return _c("ondeck-schedule", {
-              key: run.id,
-              attrs: {
-                "run-data": run,
-                "start-in": _vm.upcomingStartIn[idx + 1]
-              }
-            })
-          })
-        ],
-        2
-      )
+            [
+              _c(
+                "div",
+                {
+                  style: {
+                    color: _vm.nodecgTheme.text,
+                    font: "normal normal normal 32px 'Noto Sans JP'"
+                  }
+                },
+                [_vm._v("\n      今後のゲーム\n    ")]
+              ),
+              _vm._v(" "),
+              _vm._l(_vm.ondeckRuns, function(run, idx) {
+                return _c("ondeck-schedule", {
+                  key: run.id,
+                  attrs: {
+                    "run-data": run,
+                    "start-in": _vm.upcomingStartIn[idx + 1]
+                  }
+                })
+              })
+            ],
+            2
+          )
+        : _vm._e()
     ],
     1
   )
@@ -60363,7 +60383,170 @@ render._withStripped = true
         
       }
     })();
-},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","./UpnextScheduleComponent.vue":"components/SetupSchedule/UpnextScheduleComponent.vue","./OndeckScheduleComponent.vue":"components/SetupSchedule/OndeckScheduleComponent.vue","../../../plugin/speedcontrol":"../plugin/speedcontrol.ts","../../../plugin/additions":"../plugin/additions.ts","../../_lib/util":"_lib/util.ts","../../../plugin/theme":"../plugin/theme.ts","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"Setup/main.vue":[function(require,module,exports) {
+},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","./UpnextScheduleComponent.vue":"components/SetupSchedule/UpnextScheduleComponent.vue","./OndeckScheduleComponent.vue":"components/SetupSchedule/OndeckScheduleComponent.vue","../../../plugin/speedcontrol":"../plugin/speedcontrol.ts","../../../plugin/additions":"../plugin/additions.ts","../../_lib/util":"_lib/util.ts","../../../plugin/theme":"../plugin/theme.ts","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"Setup/components/PlayingTrack.vue":[function(require,module,exports) {
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+var __extends = this && this.__extends || function () {
+  var _extendStatics = function extendStatics(d, b) {
+    _extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) {
+        if (b.hasOwnProperty(p)) d[p] = b[p];
+      }
+    };
+
+    return _extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    _extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+var __decorate = this && this.__decorate || function (decorators, target, key, desc) {
+  var c = arguments.length,
+      r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+      d;
+  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
+    if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+  }
+  return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var vue_property_decorator_1 = require("vue-property-decorator");
+
+var nodecg_1 = require("../../../plugin/nodecg");
+
+var theme_1 = require("../../../plugin/theme");
+
+var PlayingTrackComponent =
+/** @class */
+function (_super) {
+  __extends(PlayingTrackComponent, _super);
+
+  function PlayingTrackComponent() {
+    var _this = _super !== null && _super.apply(this, arguments) || this;
+
+    _this.playingTrack = null;
+    return _this;
+  }
+
+  PlayingTrackComponent.prototype.created = function () {
+    var _this = this;
+
+    nodecg_1.spotifyNodecg.Replicant('spotifyPlayingTrack', 'nodecg-spotify-widget').on('change', function (newVal) {
+      _this.playingTrack = newVal;
+    });
+  };
+
+  Object.defineProperty(PlayingTrackComponent.prototype, "artistString", {
+    get: function get() {
+      var _a;
+
+      return ((_a = this.playingTrack) === null || _a === void 0 ? void 0 : _a.artists.join(',')) || '';
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(PlayingTrackComponent.prototype, "nodecgTheme", {
+    get: function get() {
+      return theme_1.theme;
+    },
+    enumerable: false,
+    configurable: true
+  });
+  PlayingTrackComponent = __decorate([vue_property_decorator_1.Component], PlayingTrackComponent);
+  return PlayingTrackComponent;
+}(vue_property_decorator_1.Vue);
+
+exports.default = PlayingTrackComponent;
+        var $6e9d90 = exports.default || module.exports;
+      
+      if (typeof $6e9d90 === 'function') {
+        $6e9d90 = $6e9d90.options;
+      }
+    
+        /* template */
+        Object.assign($6e9d90, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm.playingTrack
+    ? _c(
+        "div",
+        {
+          staticClass: "track",
+          style: {
+            color: _vm.nodecgTheme.text,
+            margin: "0 32px"
+          }
+        },
+        [
+          _c("i", { staticClass: "fas fa-music" }),
+          _vm._v(" "),
+          _c("span", [
+            _vm._v(
+              "\n    " +
+                _vm._s(_vm.playingTrack.name || "") +
+                " / " +
+                _vm._s(_vm.artistString) +
+                "\n  "
+            )
+          ])
+        ]
+      )
+    : _vm._e()
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: "data-v-6e9d90",
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$6e9d90', $6e9d90);
+          } else {
+            api.reload('$6e9d90', $6e9d90);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","../../../plugin/nodecg":"../plugin/nodecg.ts","../../../plugin/theme":"../plugin/theme.ts","_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"Setup/main.vue":[function(require,module,exports) {
 "use strict";
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -60418,6 +60601,8 @@ var vue_property_decorator_1 = require("vue-property-decorator");
 
 var SetupScheduleComponent_vue_1 = __importDefault(require("../components/SetupSchedule/SetupScheduleComponent.vue"));
 
+var PlayingTrack_vue_1 = __importDefault(require("./components/PlayingTrack.vue"));
+
 var App =
 /** @class */
 function (_super) {
@@ -60429,7 +60614,8 @@ function (_super) {
 
   App = __decorate([vue_property_decorator_1.Component({
     components: {
-      SetupSchedule: SetupScheduleComponent_vue_1.default
+      SetupSchedule: SetupScheduleComponent_vue_1.default,
+      PlayingTrack: PlayingTrack_vue_1.default
     }
   })], App);
   return App;
@@ -60449,6 +60635,8 @@ exports.default = App;
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
+    _c("div", { staticClass: "spotify" }, [_c("playing-track")], 1),
+    _vm._v(" "),
     _c("div", { staticClass: "schedule" }, [_c("setup-schedule")], 1)
   ])
 }
@@ -60485,7 +60673,7 @@ render._withStripped = true
       
       }
     })();
-},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","../components/SetupSchedule/SetupScheduleComponent.vue":"components/SetupSchedule/SetupScheduleComponent.vue","_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"Setup/index.ts":[function(require,module,exports) {
+},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","../components/SetupSchedule/SetupScheduleComponent.vue":"components/SetupSchedule/SetupScheduleComponent.vue","./components/PlayingTrack.vue":"Setup/components/PlayingTrack.vue","_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"Setup/index.ts":[function(require,module,exports) {
 "use strict";
 /* eslint no-new: off, @typescript-eslint/explicit-function-return-type: off */
 
@@ -60543,7 +60731,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50878" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63341" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

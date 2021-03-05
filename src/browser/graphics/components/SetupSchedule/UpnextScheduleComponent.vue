@@ -138,7 +138,7 @@
 <style scoped>
 .label {
   position: absolute;
-  font-family: Source Han Sans JP;
+  font-family: Noto Sans JP;
 }
 
 .data {
@@ -149,7 +149,7 @@
   padding: 4px 8px;
 }
 .jp {
-  font-family: Source Han Sans JP;
+  font-family: Noto Sans JP;
 }
 .en {
   font-family: Ubuntu Mono;

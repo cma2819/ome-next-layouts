@@ -56302,7 +56302,13 @@ exports.default = InfoBarTweet;
             flexGrow: "1"
           }
         },
-        [_vm._v("\n    @" + _vm._s(_vm.tweet.screenName) + "\n  ")]
+        [
+          _c("i", { staticClass: "fab fa-twitter" }),
+          _vm._v(" "),
+          _c("span", { staticClass: "screenName" }, [
+            _vm._v("\n      @" + _vm._s(_vm.tweet.screenName) + "\n    ")
+          ])
+        ]
       ),
       _vm._v(" "),
       _c(
@@ -56326,7 +56332,7 @@ render._withStripped = true
             render: render,
             staticRenderFns: staticRenderFns,
             _compiled: true,
-            _scopeId: null,
+            _scopeId: "data-v-faadd8",
             functional: undefined
           };
         })());
@@ -56346,9 +56352,13 @@ render._withStripped = true
         }
 
         
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
       }
     })();
-},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","../../../plugin/theme":"../plugin/theme.ts","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"InfoBar/main.vue":[function(require,module,exports) {
+},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","../../../plugin/theme":"../plugin/theme.ts","_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"InfoBar/main.vue":[function(require,module,exports) {
 "use strict";
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -56627,7 +56637,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50878" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63341" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

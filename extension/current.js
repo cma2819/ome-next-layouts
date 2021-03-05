@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.current = void 0;
 exports.current = function (nodecg) {
-    var logger = new nodecg.Logger('current');
     var currentReplicant = nodecg.Replicant('current-datetime', {
         defaultValue: {
             date: '',
@@ -19,7 +18,6 @@ exports.current = function (nodecg) {
             minute: 'numeric',
             hour12: false,
         });
-        logger.info("current datetime change to " + nowLocaleString);
         currentReplicant.value = {
             date: nowLocaleString.split(' ')[0],
             time: nowLocaleString.split(' ')[1],

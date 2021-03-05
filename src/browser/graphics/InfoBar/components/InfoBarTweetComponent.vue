@@ -14,7 +14,10 @@
         flexGrow: '1',
       }"
     >
-      @{{ tweet.screenName }}
+      <i class="fab fa-twitter"></i>
+      <span class="screenName">
+        @{{ tweet.screenName }}
+      </span>
     </div>
     <div
       :style="{
@@ -27,6 +30,12 @@
     </div>
   </div>
 </template>
+
+<style scoped>
+.screenName {
+  padding-left: 0.25em;
+}
+</style>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';

@@ -1,7 +1,6 @@
 import { NodeCG } from './nodecg';
 
 export const current = (nodecg: NodeCG): void => {
-  const logger = new nodecg.Logger('current');
   const currentReplicant = nodecg.Replicant('current-datetime', {
     defaultValue: {
       date: '',
@@ -19,7 +18,6 @@ export const current = (nodecg: NodeCG): void => {
       minute: 'numeric',
       hour12: false,
     });
-    logger.info(`current datetime change to ${nowLocaleString}`);
 
     currentReplicant.value = {
       date: nowLocaleString.split(' ')[0],

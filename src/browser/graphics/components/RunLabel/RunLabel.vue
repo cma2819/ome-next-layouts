@@ -8,19 +8,26 @@
     color: nodecgTheme.text
   }">
     <div :style="{
-      font: 'normal normal normal 36px \'Source Han Sans JP\'',
+      font: 'normal normal normal 36px \'Noto Sans JP\'',
       flexGrow: '2',
       display: 'flex',
+      flexWrap: 'wrap',
       alignItems: 'center',
       marginLeft: '18px'
     }">
-      {{ game }}
+      <span
+        class="game"
+        v-for="(g, idx) in gameSplits"
+        :key="idx"
+      >
+        {{ g }}
+      </span>
     </div>
     <div :style="{
       display: 'flex',
       margin: '2px 0',
       textAlign: 'right',
-      font: 'normal normal normal 24px \'Source Han Sans JP\'',
+      font: 'normal normal normal 24px \'Noto Sans JP\'',
       justifyContent: 'flex-end',
       alignItems: 'center'
     }">
@@ -40,6 +47,12 @@
   </div>
 </template>
 
+<style scoped>
+.game {
+  padding-right: 0.25em;
+}
+</style>
+
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator';
 
@@ -56,6 +69,10 @@ export default class RunLabel extends Vue {
 
   get nodecgTheme() {
     return theme;
+  }
+
+  get gameSplits(): Array<string> {
+    return this.game.split(' ');
   }
 }
 </script>

@@ -59387,33 +59387,33 @@ function (_super) {
         return [];
       }
 
-      return currentRun.teams.map(function (team) {
-        var runner = team.players[0];
+      return currentRun.teams.flatMap(function (team) {
+        return team.players.map(function (runner) {
+          if (!runner) {
+            return {
+              name: '',
+              social: {},
+              status: 'running',
+              time: ''
+            };
+          }
 
-        if (!runner) {
+          var runnerAddition = additions_1.additionsModule.speedcontrolUserAdditionArray.find(function (userAddition) {
+            return userAddition.id === runner.externalID;
+          });
+          var finishTime = teamFinishTimes[team.id];
           return {
-            name: '',
-            social: {},
-            status: 'running',
-            time: ''
+            name: runner.name,
+            social: {
+              twitch: runner.social.twitch,
+              nico: runnerAddition === null || runnerAddition === void 0 ? void 0 : runnerAddition.social.nico,
+              youtube: runnerAddition === null || runnerAddition === void 0 ? void 0 : runnerAddition.social.youtube,
+              twitter: runnerAddition === null || runnerAddition === void 0 ? void 0 : runnerAddition.social.twitter
+            },
+            status: finishTime ? finishTime.state : 'running',
+            time: finishTime ? util_1.secondsToFormatted(Math.floor(finishTime.milliseconds / 1000)) : ''
           };
-        }
-
-        var runnerAddition = additions_1.additionsModule.speedcontrolUserAdditionArray.find(function (userAddition) {
-          return userAddition.id === runner.externalID;
         });
-        var finishTime = teamFinishTimes[team.id];
-        return {
-          name: runner.name,
-          social: {
-            twitch: runner.social.twitch,
-            nico: runnerAddition === null || runnerAddition === void 0 ? void 0 : runnerAddition.social.nico,
-            youtube: runnerAddition === null || runnerAddition === void 0 ? void 0 : runnerAddition.social.youtube,
-            twitter: runnerAddition === null || runnerAddition === void 0 ? void 0 : runnerAddition.social.twitter
-          },
-          status: finishTime ? finishTime.state : 'running',
-          time: finishTime ? util_1.secondsToFormatted(Math.floor(finishTime.milliseconds / 1000)) : ''
-        };
       });
     },
     enumerable: false,
@@ -59723,6 +59723,13 @@ function (_super) {
     enumerable: false,
     configurable: true
   });
+  Object.defineProperty(RunLabel.prototype, "gameSplits", {
+    get: function get() {
+      return this.game.split(' ');
+    },
+    enumerable: false,
+    configurable: true
+  });
 
   __decorate([vue_property_decorator_1.Prop(String)], RunLabel.prototype, "game", void 0);
 
@@ -59764,14 +59771,20 @@ exports.default = RunLabel;
         "div",
         {
           style: {
-            font: "normal normal normal 36px 'Source Han Sans JP'",
+            font: "normal normal normal 36px 'Noto Sans JP'",
             flexGrow: "2",
             display: "flex",
+            flexWrap: "wrap",
             alignItems: "center",
             marginLeft: "18px"
           }
         },
-        [_vm._v("\n    " + _vm._s(_vm.game) + "\n  ")]
+        _vm._l(_vm.gameSplits, function(g, idx) {
+          return _c("span", { key: idx, staticClass: "game" }, [
+            _vm._v("\n      " + _vm._s(g) + "\n    ")
+          ])
+        }),
+        0
       ),
       _vm._v(" "),
       _c(
@@ -59781,7 +59794,7 @@ exports.default = RunLabel;
             display: "flex",
             margin: "2px 0",
             textAlign: "right",
-            font: "normal normal normal 24px 'Source Han Sans JP'",
+            font: "normal normal normal 24px 'Noto Sans JP'",
             justifyContent: "flex-end",
             alignItems: "center"
           }
@@ -59820,7 +59833,7 @@ render._withStripped = true
             render: render,
             staticRenderFns: staticRenderFns,
             _compiled: true,
-            _scopeId: null,
+            _scopeId: "data-v-b6e75e",
             functional: undefined
           };
         })());
@@ -59840,9 +59853,13 @@ render._withStripped = true
         }
 
         
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
       }
     })();
-},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","../../../plugin/theme":"../plugin/theme.ts","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"components/BackGround/LongNameplateBgComponent.vue":[function(require,module,exports) {
+},{"vue-property-decorator":"../../../node_modules/vue-property-decorator/lib/vue-property-decorator.js","../../../plugin/theme":"../plugin/theme.ts","_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../../../node_modules/vue-hot-reload-api/dist/index.js","vue":"../../../node_modules/vue/dist/vue.runtime.esm.js"}],"components/BackGround/LongNameplateBgComponent.vue":[function(require,module,exports) {
 "use strict";
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -61510,7 +61527,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50878" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63341" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

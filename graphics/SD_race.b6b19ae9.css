@@ -4653,6 +4653,9 @@ html {
   left: 0;
   overflow: hidden;
 }
+.game[data-v-b6e75e] {
+  padding-right: 0.25em;
+}
 .a[data-v-e23854],
 .b[data-v-e23854],
 .d[data-v-e23854] {
@@ -4706,7 +4709,7 @@ html {
   font: normal normal normal 28px Ubuntu Mono;
 }
 .name[data-v-e3f0fe] {
-  font: normal normal normal 40px Source Han Sans JP;
+  font: normal normal normal 40px Noto Sans JP;
 }
 .label[data-v-e3f0fe] {
   font: normal normal normal 32px Ubuntu Mono;
@@ -4762,7 +4765,7 @@ html {
   font: normal normal normal 28px Ubuntu Mono;
 }
 .name[data-v-db72b2] {
-  font: normal normal normal 40px Source Han Sans JP;
+  font: normal normal normal 40px Noto Sans JP;
 }
 .label[data-v-db72b2] {
   font: normal normal normal 32px Ubuntu Mono;

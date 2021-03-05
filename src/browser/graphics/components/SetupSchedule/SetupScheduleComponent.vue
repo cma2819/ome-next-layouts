@@ -12,6 +12,7 @@
       :run-data="upnextRun"
     ></upnext-schedule>
     <div
+      v-if="ondeckRuns.length > 0"
       :style="{
         padding: '12px 48px',
       }"
@@ -19,9 +20,11 @@
       <div
         :style="{
           color: nodecgTheme.text,
-          font: 'normal normal normal 32px \'Source Han Sans JP\''
+          font: 'normal normal normal 32px \'Noto Sans JP\''
         }"
-      >今後のゲーム</div>
+      >
+        今後のゲーム
+      </div>
       <ondeck-schedule
         v-for="(run, idx) in ondeckRuns"
         :key="run.id"

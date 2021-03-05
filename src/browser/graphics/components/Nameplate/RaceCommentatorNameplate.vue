@@ -102,7 +102,7 @@
     font: normal normal normal 28px Ubuntu Mono;
   }
   .name {
-    font: normal normal normal 40px Source Han Sans JP;
+    font: normal normal normal 40px Noto Sans JP;
   }
   .label {
     font: normal normal normal 32px Ubuntu Mono;

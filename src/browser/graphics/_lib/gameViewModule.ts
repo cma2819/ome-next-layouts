@@ -102,33 +102,34 @@ class GameViewModule extends VuexModule {
         if (!currentRun || !teamFinishTimes) {
             return [];
         }
-        return currentRun.teams.map((team) => {
-            const runner = team.players[0];
-            if (!runner) {
-                return {
-                    name: '',
-                    social: {},
-                    status: 'running',
-                    time: ''
-                }
-            }
-            const runnerAddition = additions.speedcontrolUserAdditionArray.find((userAddition) => {
-                return userAddition.id === runner.externalID;
+        return currentRun.teams.flatMap((team) => {
+            return team.players.map((runner) => {
+              if (!runner) {
+                  return {
+                      name: '',
+                      social: {},
+                      status: 'running',
+                      time: ''
+                  }
+              }
+              const runnerAddition = additions.speedcontrolUserAdditionArray.find((userAddition) => {
+                  return userAddition.id === runner.externalID;
+              });
+
+              const finishTime = teamFinishTimes[team.id];
+
+              return {
+                  name: runner.name,
+                  social: {
+                      twitch: runner.social.twitch,
+                      nico: runnerAddition?.social.nico,
+                      youtube: runnerAddition?.social.youtube,
+                      twitter: runnerAddition?.social.twitter
+                  },
+                  status: finishTime ? finishTime.state : 'running',
+                  time: finishTime ? secondsToFormatted(Math.floor(finishTime.milliseconds / 1000)) : ''
+              };
             });
-
-            const finishTime = teamFinishTimes[team.id];
-
-            return {
-                name: runner.name,
-                social: {
-                    twitch: runner.social.twitch,
-                    nico: runnerAddition?.social.nico,
-                    youtube: runnerAddition?.social.youtube,
-                    twitter: runnerAddition?.social.twitter
-                },
-                status: finishTime ? finishTime.state : 'running',
-                time: finishTime ? secondsToFormatted(Math.floor(finishTime.milliseconds / 1000)) : ''
-            };
         });
     }
 

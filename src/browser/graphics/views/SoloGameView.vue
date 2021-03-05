@@ -79,7 +79,7 @@ export default class SoloGameView extends Vue {
   }
 
   get commentator() {
-    return gameViewModule.commentator;
+    return gameViewModule.commentator.name !== '' ? gameViewModule.commentator : null;
   }
 }
 </script>

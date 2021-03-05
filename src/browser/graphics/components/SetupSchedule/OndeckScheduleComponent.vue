@@ -1,7 +1,8 @@
 <template>
   <div
     :style="{
-      color: nodecgTheme.text
+      color: nodecgTheme.text,
+      marginBottom: '16px',
     }"
   >
     <div
@@ -18,53 +19,43 @@
       </div>
     </div>
     <long-straight-nameplate-bg></long-straight-nameplate-bg>
+    <div
+      :style="{
+        display: 'flex',
+        justifyContent: 'flex-end'
+      }"
+    >
+      <div class="info">
+        <span>{{ runData.category }}</span>
+        |
+        <span>{{ runData.system }}</span>
+      </div>
+    </div>
   </div>
 </template>
 
 <style scoped>
 
-.game, .estimate {
-  height: 70px;
+.game, .estimate, .info {
   padding: 0 36px;
-  font: normal normal normal 28px 'Source Han Sans JP';
   display: flex;
   align-items: center;
 }
 
-.game > * {
-  padding-left: 16px;
+.game {
+  height: 70px;
+  font: normal normal normal 28px 'Noto Sans JP';
+}
+.info {
+  height: 32px;
+  font: normal normal normal 24px 'Noto Sans JP';
+}
+.info > span {
+  padding: 0 16px;
 }
 
-.game .title {
-  display: block;
-  font-size: 1.6em;
-  font-weight: bold;
-  margin-top: -0.2em;
-}
-
-.info div {
-  display: inline-block;
-  margin-right: 1em;
-}
-
-.next .game {
-  height: 200px;
-}
-
-.later-than-next {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.later-than-next .time {
-  font-size: 1.4em;
-  width: 160px;
-}
-
-.later-than-next .game {
-  height: 160px;
-  font-size: 100%;
+.estimate {
+  font: normal normal normal 48px 'Ubuntu Mono';
 }
 
 </style>
