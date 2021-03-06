@@ -1,9 +1,6 @@
 <template>
   <div>
     <svg
-      :class="{
-        mirrored: mirror
-      }" 
       xmlns="http://www.w3.org/2000/svg"
       width="898"
       height="56.536"
@@ -55,9 +52,8 @@
 </style>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue } from 'vue-property-decorator';
 
-/* global nodecg */
 @Component
-export default class ShortNameplateBg extends Vue {}
+export default class LongNameplateBg extends Vue {}
 </script>

@@ -4649,7 +4649,7 @@ readers do not read off random characters that represent icons */
 }
 .spotify[data-v-af0e95] {
   position: absolute;
-  top: 32px;
+  bottom: 0px;
   right: 0px;
 }
 .schedule[data-v-af0e95] {

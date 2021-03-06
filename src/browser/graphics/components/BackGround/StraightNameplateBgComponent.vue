@@ -9,11 +9,11 @@
     >
       <g transform="translate(-715 -862)">
         <line class="a" x2="454" transform="translate(733 872)" />
-        <g class="b" transform="translate(735 882) rotate(180)" :stroke="color">
+        <g class="b" transform="translate(735 882) rotate(180)">
           <circle class="c" cx="10" cy="10" r="10" />
           <circle class="d" cx="10" cy="10" r="7.5" />
         </g>
-        <g class="b" transform="translate(1205 882) rotate(180)" :stroke="color">
+        <g class="b" transform="translate(1205 882) rotate(180)">
           <circle class="c" cx="10" cy="10" r="10" />
           <circle class="d" cx="10" cy="10" r="7.5" />
         </g>

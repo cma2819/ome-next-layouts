@@ -59905,8 +59905,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var vue_property_decorator_1 = require("vue-property-decorator");
-/* global nodecg */
-
 
 var ShortNameplateBg =
 /** @class */
@@ -60858,7 +60856,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63341" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51403" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

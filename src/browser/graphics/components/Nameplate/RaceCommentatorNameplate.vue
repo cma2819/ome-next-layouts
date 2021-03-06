@@ -9,70 +9,69 @@
       color: nodecgTheme.text,
     }"
   >
-      <div
-        :style="{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'flex-end',
-          width: '100%',
-          height: '92px',
-          padding: '0 24px',
-          marginBottom: '-6px'
-        }"
+    <div
+      :style="{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-end',
+        width: '100%',
+        height: '92px',
+        padding: '0 24px',
+        marginBottom: '-6px'
+      }"
+    >
+      <transition
+        name="social"
+        mode="out-in"
       >
-        <transition
-          name="social"
-          mode="out-in"
+        <div
+          v-if="displaySocial === 0 && social.twitch"
+          key="twitch"
+          class="account"
         >
-          <div
-            v-if="displaySocial === 0 && social.twitch"
-            key="twitch"
-            class="account"
-          >
-            <span class="icon">
-              <i class="fab fa-twitch" />
-            </span>
-            <span>{{ social.twitch }}</span>
-          </div>
-          <div
-            v-else-if="displaySocial === 1 && social.nico"
-            key="nico"
-            class="account"
-          >
-            <span>{{ social.nico }}</span>
-          </div>
-          <div
-            v-else-if="displaySocial === 2 && social.youtube"
-            key="youtube"
-            class="account"
-          >
-            <span class="icon">
-              <i class="fab fa-youtube" />
-            </span>
-            <span>{{ social.youtube }}</span>
-          </div>
-          <div
-            v-else-if="displaySocial === 3 && social.twitter"
-            key="twitter"
-            class="account"
-          >
-            <span class="icon">
-              <i class="fab fa-twitter" />
-            </span>
-            <span>{{ social.twitter }}</span>
-          </div>
-          <div
-            v-else
-            key="blank"
-            class="account"
-          >
-          </div>
-        </transition>
-        <div class="name">
-          {{ name }}
+          <span class="icon">
+            <i class="fab fa-twitch" />
+          </span>
+          <span>{{ social.twitch }}</span>
         </div>
+        <div
+          v-else-if="displaySocial === 1 && social.nico"
+          key="nico"
+          class="account"
+        >
+          <span>{{ social.nico }}</span>
+        </div>
+        <div
+          v-else-if="displaySocial === 2 && social.youtube"
+          key="youtube"
+          class="account"
+        >
+          <span class="icon">
+            <i class="fab fa-youtube" />
+          </span>
+          <span>{{ social.youtube }}</span>
+        </div>
+        <div
+          v-else-if="displaySocial === 3 && social.twitter"
+          key="twitter"
+          class="account"
+        >
+          <span class="icon">
+            <i class="fab fa-twitter" />
+          </span>
+          <span>{{ social.twitter }}</span>
+        </div>
+        <div
+          v-else
+          key="blank"
+          class="account"
+        />
+      </transition>
+      <div class="name">
+        {{ name }}
       </div>
-      <straight-nameplate-bg></straight-nameplate-bg>
+    </div>
+    <straight-nameplate-bg></straight-nameplate-bg>
     <div
       class="label"
       :style="{

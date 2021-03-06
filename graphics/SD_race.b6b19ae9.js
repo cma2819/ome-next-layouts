@@ -59905,23 +59905,21 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var vue_property_decorator_1 = require("vue-property-decorator");
-/* global nodecg */
 
-
-var ShortNameplateBg =
+var LongNameplateBg =
 /** @class */
 function (_super) {
-  __extends(ShortNameplateBg, _super);
+  __extends(LongNameplateBg, _super);
 
-  function ShortNameplateBg() {
+  function LongNameplateBg() {
     return _super !== null && _super.apply(this, arguments) || this;
   }
 
-  ShortNameplateBg = __decorate([vue_property_decorator_1.Component], ShortNameplateBg);
-  return ShortNameplateBg;
+  LongNameplateBg = __decorate([vue_property_decorator_1.Component], LongNameplateBg);
+  return LongNameplateBg;
 }(vue_property_decorator_1.Vue);
 
-exports.default = ShortNameplateBg;
+exports.default = LongNameplateBg;
         var $e23854 = exports.default || module.exports;
       
       if (typeof $e23854 === 'function') {
@@ -59938,9 +59936,6 @@ exports.default = ShortNameplateBg;
     _c(
       "svg",
       {
-        class: {
-          mirrored: _vm.mirror
-        },
         attrs: {
           xmlns: "http://www.w3.org/2000/svg",
           width: "898",
@@ -60108,9 +60103,6 @@ exports.default = ShortNameplateBg;
     _c(
       "svg",
       {
-        class: {
-          mirrored: _vm.mirror
-        },
         attrs: {
           xmlns: "http://www.w3.org/2000/svg",
           width: "898",
@@ -60267,9 +60259,20 @@ function (_super) {
     return _super !== null && _super.apply(this, arguments) || this;
   }
 
+  RaceNameplate.prototype.created = function () {
+    console.log(this.nodecgTheme);
+  };
+
   Object.defineProperty(RaceNameplate.prototype, "nodecgTheme", {
     get: function get() {
       return theme_1.theme;
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(RaceNameplate.prototype, "timerColor", {
+    get: function get() {
+      return theme_1.theme.timer.finish;
     },
     enumerable: false,
     configurable: true
@@ -60332,7 +60335,11 @@ exports.default = RaceNameplate;
             color: _vm.nodecgTheme.secondary
           }
         },
-        [_vm._v(_vm._s(_vm.isRunner ? "Runner" : "Commentator"))]
+        [
+          _vm._v(
+            "\n    " + _vm._s(_vm.isRunner ? "Runner" : "Commentator") + "\n  "
+          )
+        ]
       ),
       _vm._v(" "),
       _c(
@@ -60434,17 +60441,27 @@ exports.default = RaceNameplate;
                           ]
                         ),
                         _vm._v(" "),
-                        _c("div", [
-                          _vm._v(
-                            "\n          " + _vm._s(_vm.time) + "\n        "
-                          )
-                        ])
+                        _c(
+                          "div",
+                          {
+                            style: {
+                              color: _vm.nodecgTheme.timer.finish
+                            }
+                          },
+                          [
+                            _vm._v(
+                              "\n            " +
+                                _vm._s(_vm.time) +
+                                "\n          "
+                            )
+                          ]
+                        )
                       ],
                       1
                     ),
                     _vm._v(" "),
                     _c("div", { staticClass: "name" }, [
-                      _vm._v("\n        " + _vm._s(_vm.name) + "\n      ")
+                      _vm._v("\n          " + _vm._s(_vm.name) + "\n        ")
                     ])
                   ]
                 )
@@ -60538,17 +60555,27 @@ exports.default = RaceNameplate;
                           ]
                         ),
                         _vm._v(" "),
-                        _c("div", [
-                          _vm._v(
-                            "\n          " + _vm._s(_vm.time) + "\n        "
-                          )
-                        ])
+                        _c(
+                          "div",
+                          {
+                            style: {
+                              color: _vm.nodecgTheme.timer.finish
+                            }
+                          },
+                          [
+                            _vm._v(
+                              "\n            " +
+                                _vm._s(_vm.time) +
+                                "\n          "
+                            )
+                          ]
+                        )
                       ],
                       1
                     ),
                     _vm._v(" "),
                     _c("div", { staticClass: "name" }, [
-                      _vm._v("\n        " + _vm._s(_vm.name) + "\n      ")
+                      _vm._v("\n          " + _vm._s(_vm.name) + "\n        ")
                     ])
                   ]
                 )
@@ -60693,10 +60720,7 @@ exports.default = StraightNameplateBg;
               "g",
               {
                 staticClass: "b",
-                attrs: {
-                  transform: "translate(735 882) rotate(180)",
-                  stroke: _vm.color
-                }
+                attrs: { transform: "translate(735 882) rotate(180)" }
               },
               [
                 _c("circle", {
@@ -60715,10 +60739,7 @@ exports.default = StraightNameplateBg;
               "g",
               {
                 staticClass: "b",
-                attrs: {
-                  transform: "translate(1205 882) rotate(180)",
-                  stroke: _vm.color
-                }
+                attrs: { transform: "translate(1205 882) rotate(180)" }
               },
               [
                 _c("circle", {
@@ -61527,7 +61548,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63341" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51403" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
