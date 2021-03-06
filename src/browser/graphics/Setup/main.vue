@@ -12,7 +12,7 @@
 <style scoped>
 .spotify {
   position: absolute;
-  top: 32px;
+  bottom: 0px;
   right: 0px;
 }
 
