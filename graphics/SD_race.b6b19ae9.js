@@ -60962,7 +60962,7 @@ exports.default = RaceCommentatorNameplate;
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "name" }, [
-            _vm._v("\n        " + _vm._s(_vm.name) + "\n      ")
+            _vm._v("\n      " + _vm._s(_vm.name) + "\n    ")
           ])
         ],
         1
@@ -61548,7 +61548,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51403" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61295" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

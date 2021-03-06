@@ -22,9 +22,20 @@
     <div
       :style="{
         display: 'flex',
-        justifyContent: 'flex-end'
+        justifyContent: 'space-between'
       }"
     >
+      <div class="info">
+        <span
+          :style="{
+            color: nodecgTheme.secondary,
+            fontFamily: 'Ubuntu Mono'
+          }"
+        >
+          Runner
+        </span>
+        <span>{{ runners }}</span>
+      </div>
       <div class="info">
         <span>{{ runData.category }}</span>
         |
