@@ -4656,6 +4656,48 @@ html {
 .game[data-v-b6e75e] {
   padding-right: 0.25em;
 }
+.a[data-v-8fdebe],
+.b[data-v-8fdebe],
+.d[data-v-8fdebe] {
+  fill: none;
+}
+.a[data-v-8fdebe] {
+  stroke-width: 10px;
+}
+.b[data-v-8fdebe] {
+  stroke-width: 5px;
+}
+.c[data-v-8fdebe] {
+  stroke: none;
+}
+.a[data-v-8fdebe],
+.b[data-v-8fdebe] {
+  stroke: #208200;
+}
+.mirrored[data-v-8fdebe] {
+  transform: scale(-1, 1);
+}
+.social-enter-active[data-v-d08e17] {
+  transition: all 1s 1s;
+}
+.social-leave-active[data-v-d08e17] {
+  transition: all 1s;
+}
+.social-enter[data-v-d08e17], .social-leave-to[data-v-d08e17] {
+  transform: translateX(-20px);
+  opacity: 0;
+}
+.account[data-v-d08e17] {
+  font: normal normal normal 28px Ubuntu Mono;
+}
+.name[data-v-d08e17] {
+  font: normal normal normal 40px Noto Sans JP;
+  padding-left: 16px;
+}
+.label[data-v-d08e17] {
+  font: normal normal normal 32px/24px Ubuntu Mono;
+  padding-left: 16px;
+}
 .a[data-v-e23854],
 .b[data-v-e23854],
 .d[data-v-e23854] {
@@ -4713,66 +4755,21 @@ html {
 }
 .label[data-v-e3f0fe] {
   font: normal normal normal 32px Ubuntu Mono;
-  padding-right: 48px;
+  padding-right: 16px;
   text-align: right;
 }
 .right .label[data-v-e3f0fe] {
-  padding-left: 48px;
+  padding-left: 16px;
   text-align: left;
 }
 .bg[data-v-e3f0fe] {
-  padding: 0 48px 16px 16px;
-}
-.right .bg[data-v-e3f0fe] {
-  padding: 0 16px 16px 48px;
-  flex-direction: row-reverse;
+  padding: 16px 32px;
 }
 .info[data-v-e3f0fe] {
   height: 64px;
 }
 .right .info[data-v-e3f0fe] {
   align-items: flex-end;
-}
-.a[data-v-355918],
-.b[data-v-355918],
-.d[data-v-355918] {
-  fill: none;
-}
-.a[data-v-355918] {
-  stroke-width: 10px;
-}
-.b[data-v-355918] {
-  stroke-width: 5px;
-}
-.a[data-v-355918],
-.b[data-v-355918] {
-  stroke: #208200;
-}
-.c[data-v-355918] {
-  stroke: none;
-}
-.social-enter-active[data-v-db72b2] {
-  transition: all 1s 1s;
-}
-.social-leave-active[data-v-db72b2] {
-  transition: all 1s;
-}
-.social-enter[data-v-db72b2], .social-leave-to[data-v-db72b2] {
-  transform: translateX(-20px);
-  opacity: 0;
-}
-.account[data-v-db72b2] {
-  font: normal normal normal 28px Ubuntu Mono;
-}
-.name[data-v-db72b2] {
-  font: normal normal normal 40px Noto Sans JP;
-}
-.label[data-v-db72b2] {
-  font: normal normal normal 32px Ubuntu Mono;
-  text-align: center;
-}
-.bg[data-v-db72b2] {
-  padding: 0 48px 16px 16px;
 }
 .label[data-v-4a7e4f] {
   font: normal normal normal 32px Ubuntu Mono;
@@ -4788,29 +4785,29 @@ html {
 .games {
   position: absolute;
   top: 780px;
-  left: 40px;
+  left: 36px;
   width: 650px;
   height: 140px;
 }
 .timer {
   position: absolute;
   top: 780px;
-  left: 1240px;
+  right: 36px;
   width: 650px;
   height: 140px;
 }
 .runner-left {
   position: absolute;
   top: 680px;
-  left: 0px;
-  width: 890px;
+  left: 36px;
+  width: 864px;
   height: 96px;
 }
 .runner-right {
   position: absolute;
   top: 680px;
-  right: 0px;
-  width: 890px;
+  right: 36px;
+  width: 864px;
   height: 96px;
 }
 .commentator {

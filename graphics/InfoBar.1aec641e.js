@@ -56105,7 +56105,6 @@ function (_super) {
     var _this = _super !== null && _super.apply(this, arguments) || this;
 
     _this.currentTime = '';
-    _this.flash = false;
     return _this;
   }
 
@@ -56115,14 +56114,11 @@ function (_super) {
     nodecg_1.bundleNodecg.Replicant('current-datetime').on('change', function (newVal) {
       _this.currentTime = newVal.time;
     });
-    setInterval(function () {
-      _this.flash = !_this.flash;
-    }, 1000);
   };
 
   Object.defineProperty(InfoBarCurrentTime.prototype, "timeString", {
     get: function get() {
-      return this.flash ? this.currentTime.replace(':', ' ') : this.currentTime;
+      return this.currentTime;
     },
     enumerable: false,
     configurable: true
@@ -56637,7 +56633,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61295" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61674" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

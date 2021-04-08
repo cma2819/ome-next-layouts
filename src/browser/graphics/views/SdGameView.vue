@@ -22,7 +22,7 @@
 }
 .commentator {
   position: absolute;
-  top: 772px;
+  top: 758px;
   left: 218px;
   width: 502px;
   height: 139px;

@@ -21,20 +21,15 @@ import { theme } from '../../../plugin/theme';
 @Component
 export default class InfoBarCurrentTime extends Vue {
   currentTime = '';
-  flash = false;
 
   created(): void {
     bundleNodecg.Replicant('current-datetime').on('change', (newVal) => {
       this.currentTime = newVal.time;
     });
-
-    setInterval(() => {
-      this.flash = !this.flash;
-    }, 1000);
   }
 
   get timeString(): string {
-    return this.flash ? this.currentTime.replace(':', ' ') : this.currentTime;
+    return this.currentTime;
   }
 
   get nodecgTheme() {

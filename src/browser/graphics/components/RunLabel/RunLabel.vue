@@ -1,46 +1,56 @@
 <template>
-  <div :style="{
-    display: 'flex',
-    flexDirection: 'column',
-    width: '100%',
-    height: '100%',
-    border: `3px solid ${nodecgTheme.text}`,
-    color: nodecgTheme.text
-  }">
-    <div :style="{
-      font: 'normal normal normal 36px \'Noto Sans JP\'',
-      flexGrow: '2',
+  <div
+    :style="{
       display: 'flex',
-      flexWrap: 'wrap',
-      alignItems: 'center',
-      marginLeft: '18px'
-    }">
+      flexDirection: 'column',
+      width: '100%',
+      height: '100%',
+      color: nodecgTheme.text,
+      backgroundColor: 'rgba(0, 0, 0, 0.6)'
+    }"
+  >
+    <div
+      :style="{
+        font: 'normal normal normal 36px \'Noto Sans JP\'',
+        flexGrow: '2',
+        display: 'flex',
+        flexWrap: 'wrap',
+        alignItems: 'center',
+        marginLeft: '18px'
+      }"
+    >
       <span
-        class="game"
         v-for="(g, idx) in gameSplits"
         :key="idx"
+        class="game"
       >
         {{ g }}
       </span>
     </div>
-    <div :style="{
-      display: 'flex',
-      margin: '2px 0',
-      textAlign: 'right',
-      font: 'normal normal normal 24px \'Noto Sans JP\'',
-      justifyContent: 'flex-end',
-      alignItems: 'center'
-    }">
-      <div :style="{
-        textAlign: 'center',
-        padding: '0 1em',
-        borderRight: `2px solid ${nodecgTheme.text}`
-      }">
+    <div
+      :style="{
+        display: 'flex',
+        margin: '2px 0',
+        textAlign: 'right',
+        font: 'normal normal normal 24px \'Noto Sans JP\'',
+        justifyContent: 'flex-end',
+        alignItems: 'center'
+      }"
+    >
+      <div
+        :style="{
+          textAlign: 'center',
+          padding: '0 1em',
+          borderRight: `2px solid ${nodecgTheme.text}`
+        }"
+      >
         {{ category }}
       </div>
-      <div :style="{
-        padding: '0 1em'
-      }">
+      <div
+        :style="{
+          padding: '0 1em'
+        }"
+      >
         {{ platform }}
       </div>
     </div>

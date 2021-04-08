@@ -59762,8 +59762,8 @@ exports.default = RunLabel;
         flexDirection: "column",
         width: "100%",
         height: "100%",
-        border: "3px solid " + _vm.nodecgTheme.text,
-        color: _vm.nodecgTheme.text
+        color: _vm.nodecgTheme.text,
+        backgroundColor: "rgba(0, 0, 0, 0.6)"
       }
     },
     [
@@ -60149,76 +60149,76 @@ exports.default = Nameplate;
       style: {
         width: "100%",
         height: "100%",
-        color: _vm.nodecgTheme.text
+        color: _vm.nodecgTheme.text,
+        backgroundColor: "rgba(0, 0, 0, 0.6)"
       }
     },
     [
-      _c("short-nameplate-bg", [
-        _c(
-          "div",
-          {
-            style: {
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "flex-end",
-              width: "100%",
-              height: "92px",
-              padding: "0 0 16px 84px"
-            }
-          },
-          [
-            _c("transition", { attrs: { name: "social", mode: "out-in" } }, [
-              _vm.displaySocial === 0 && _vm.social.twitch
-                ? _c("div", { key: "twitch", staticClass: "account" }, [
-                    _c("span", { staticClass: "icon" }, [
-                      _c("i", { staticClass: "fab fa-twitch" })
-                    ]),
-                    _vm._v(" "),
-                    _c("span", [_vm._v(_vm._s(_vm.social.twitch))])
-                  ])
-                : _vm.displaySocial === 1 && _vm.social.nico
-                ? _c("div", { key: "nico", staticClass: "account" }, [
-                    _c("span", [_vm._v(_vm._s(_vm.social.nico))])
-                  ])
-                : _vm.displaySocial === 2 && _vm.social.youtube
-                ? _c("div", { key: "youtube", staticClass: "account" }, [
-                    _c("span", { staticClass: "icon" }, [
-                      _c("i", { staticClass: "fab fa-youtube" })
-                    ]),
-                    _vm._v(" "),
-                    _c("span", [_vm._v(_vm._s(_vm.social.youtube))])
-                  ])
-                : _vm.displaySocial === 3 && _vm.social.twitter
-                ? _c("div", { key: "twitter", staticClass: "account" }, [
-                    _c("span", { staticClass: "icon" }, [
-                      _c("i", { staticClass: "fab fa-twitter" })
-                    ]),
-                    _vm._v(" "),
-                    _c("span", [_vm._v(_vm._s(_vm.social.twitter))])
-                  ])
-                : _c("div", { key: "blank", staticClass: "account" })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "name" }, [
-              _vm._v("\n        " + _vm._s(_vm.name) + "\n      ")
-            ])
-          ],
-          1
-        )
-      ]),
-      _vm._v(" "),
       _c(
-        "span",
+        "div",
         {
-          staticClass: "label",
           style: {
-            color: _vm.nodecgTheme.secondary
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-end",
+            width: "100%",
+            height: "143px",
+            padding: "16px"
           }
         },
-        [_vm._v(_vm._s(_vm.isRunner ? "Runner" : "Commentator"))]
+        [
+          _c("transition", { attrs: { name: "social", mode: "out-in" } }, [
+            _vm.displaySocial === 0 && _vm.social.twitch
+              ? _c("div", { key: "twitch", staticClass: "account" }, [
+                  _c("span", { staticClass: "icon" }, [
+                    _c("i", { staticClass: "fab fa-twitch" })
+                  ]),
+                  _vm._v(" "),
+                  _c("span", [_vm._v(_vm._s(_vm.social.twitch))])
+                ])
+              : _vm.displaySocial === 1 && _vm.social.nico
+              ? _c("div", { key: "nico", staticClass: "account" }, [
+                  _c("span", [_vm._v(_vm._s(_vm.social.nico))])
+                ])
+              : _vm.displaySocial === 2 && _vm.social.youtube
+              ? _c("div", { key: "youtube", staticClass: "account" }, [
+                  _c("span", { staticClass: "icon" }, [
+                    _c("i", { staticClass: "fab fa-youtube" })
+                  ]),
+                  _vm._v(" "),
+                  _c("span", [_vm._v(_vm._s(_vm.social.youtube))])
+                ])
+              : _vm.displaySocial === 3 && _vm.social.twitter
+              ? _c("div", { key: "twitter", staticClass: "account" }, [
+                  _c("span", { staticClass: "icon" }, [
+                    _c("i", { staticClass: "fab fa-twitter" })
+                  ]),
+                  _vm._v(" "),
+                  _c("span", [_vm._v(_vm._s(_vm.social.twitter))])
+                ])
+              : _c("div", { key: "blank", staticClass: "account" }, [
+                  _c("span")
+                ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "name" }, [
+            _vm._v("\n      " + _vm._s(_vm.name) + "\n    ")
+          ]),
+          _vm._v(" "),
+          _c(
+            "span",
+            {
+              staticClass: "label",
+              style: {
+                color: _vm.nodecgTheme.secondary
+              }
+            },
+            [_vm._v(_vm._s(_vm.isRunner ? "Runner" : "Commentator"))]
+          )
+        ],
+        1
       )
-    ],
-    1
+    ]
   )
 }
 var staticRenderFns = []
@@ -60363,8 +60363,8 @@ exports.default = Timer;
         display: "flex",
         width: "100%",
         height: "100%",
-        border: "3px solid " + _vm.nodecgTheme.text,
         color: _vm.nodecgTheme.text,
+        backgroundColor: "rgba(0, 0, 0, 0.6)",
         padding: "20px 35px 8px"
       }
     },
@@ -60851,7 +60851,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61295" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61674" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

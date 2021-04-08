@@ -2,8 +2,8 @@
 .games {
   position: absolute;
   top: 760px;
-  left: 633px;
-  width: 628px;
+  left: 620px;
+  width: 650px;
   height: 150px;
 }
 .timer {

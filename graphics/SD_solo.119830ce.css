@@ -4664,7 +4664,7 @@ readers do not read off random characters that represent icons */
 }
 .commentator {
   position: absolute;
-  top: 772px;
+  top: 758px;
   left: 218px;
   width: 502px;
   height: 139px;
@@ -4720,10 +4720,11 @@ html {
 }
 .name[data-v-d08e17] {
   font: normal normal normal 40px Noto Sans JP;
+  padding-left: 16px;
 }
 .label[data-v-d08e17] {
-  font: normal normal normal 32px Ubuntu Mono;
-  padding-left: 84px;
+  font: normal normal normal 32px/24px Ubuntu Mono;
+  padding-left: 16px;
 }
 .label[data-v-4a7e4f] {
   font: normal normal normal 32px Ubuntu Mono;

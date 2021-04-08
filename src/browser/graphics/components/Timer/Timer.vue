@@ -4,8 +4,8 @@
       display: 'flex',
       width: '100%',
       height: '100%',
-      border: `3px solid ${nodecgTheme.text}`,
       color: nodecgTheme.text,
+      backgroundColor: 'rgba(0, 0, 0, 0.6)',
       padding: '20px 35px 8px',
     }"
   >

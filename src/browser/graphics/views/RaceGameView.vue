@@ -15,17 +15,17 @@
       ></timer>
     </div>
     <div class="runner-left">
-      <nameplate
+      <race-nameplate
         v-if="runners[0]"
         :display-social="displaySocial"
         :name="runners[0].name"
         :is-runner="true"
         :social="runners[0].social"
         :time="runners[0].time"
-      ></nameplate>
+      ></race-nameplate>
     </div>
     <div class="runner-right">
-      <nameplate
+      <race-nameplate
         v-if="runners[1]"
         :display-social="displaySocial"
         :name="runners[1].name"
@@ -33,16 +33,16 @@
         :social="runners[1].social"
         :is-right="true"
         :time="runners[1].time"
-      ></nameplate>
+      ></race-nameplate>
     </div>
     <div class="commentator">
-      <commentator-nameplate
+      <nameplate
         v-if="commentator.name !== ''"
         :display-social="displaySocial"
         :name="commentator.name"
         :is-runner="false"
         :social="commentator.social"
-      ></commentator-nameplate>
+      ></nameplate>
     </div>
   </game-view>
 </template>
@@ -51,29 +51,29 @@
 .games {
   position: absolute;
   top: 780px;
-  left: 40px;
+  left: 36px;
   width: 650px;
   height: 140px;
 }
 .timer {
   position: absolute;
   top: 780px;
-  left: 1240px;
+  right: 36px;
   width: 650px;
   height: 140px;
 }
 .runner-left {
   position: absolute;
   top: 680px;
-  left: 0px;
-  width: 890px;
+  left: 36px;
+  width: 864px;
   height: 96px;
 }
 .runner-right {
   position: absolute;
   top: 680px;
-  right: 0px;
-  width: 890px;
+  right: 36px;
+  width: 864px;
   height: 96px;
 }
 .commentator {
@@ -89,8 +89,8 @@
 import { Vue, Component, Prop } from 'vue-property-decorator';
 import GameView from './GameView.vue';
 import RunLabel from '../components/RunLabel/RunLabel.vue';
-import Nameplate from '../components/Nameplate/RaceNameplate.vue';
-import CommentatorNameplate from '../components/Nameplate/RaceCommentatorNameplate.vue';
+import Nameplate from '../components/Nameplate/Nameplate.vue';
+import RaceNameplate from '../components/Nameplate/RaceNameplate.vue';
 import Timer from '../components/Timer/Timer.vue';
 import { ClipPath } from '../components/ClippedCanvas/types';
 import { gameViewModule } from '../_lib/gameViewModule';
@@ -99,7 +99,7 @@ import { gameViewModule } from '../_lib/gameViewModule';
     GameView,
     RunLabel,
     Nameplate,
-    CommentatorNameplate,
+    RaceNameplate,
     Timer,
   }
 })
