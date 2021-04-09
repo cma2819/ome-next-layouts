@@ -5,7 +5,7 @@
       width: '100%',
       height: '100%',
       color: nodecgTheme.text,
-      backgroundColor: 'rgba(0, 0, 0, 0.6)',
+      backgroundColor: 'rgba(0, 0, 0, 0.8)',
       padding: '20px 35px 8px',
     }"
   >

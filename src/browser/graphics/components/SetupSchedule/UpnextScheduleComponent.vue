@@ -10,7 +10,7 @@
         class="label"
         :style="{
           fontSize: '42px',
-          fontWiehgt: 'bold',
+          fontWeight: 'bold',
           color: nodecgTheme.secondary,
         }"
       >

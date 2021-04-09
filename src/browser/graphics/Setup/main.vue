@@ -11,7 +11,7 @@
 
 <style scoped>
 .bg {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.8);
   height: 930px;
   width: 1575px;
   margin: 0 auto;
