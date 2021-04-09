@@ -59419,7 +59419,7 @@ exports.default = SetupScheduleComponent;
                 staticClass: "label",
                 style: {
                   fontSize: "42px",
-                  fontWiehgt: "bold",
+                  fontWeight: "bold",
                   color: _vm.nodecgTheme.secondary
                 }
               },
@@ -60790,7 +60790,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54567" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54508" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

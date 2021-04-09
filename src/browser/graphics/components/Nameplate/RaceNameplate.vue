@@ -108,6 +108,7 @@
         class="bg"
         :style="{
           display: 'flex',
+          flexDirection: 'row-reverse',
           justifyContent: 'space-between',
           alignItems: 'flex-end',
           width: '100%',

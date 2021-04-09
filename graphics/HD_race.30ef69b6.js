@@ -59763,7 +59763,7 @@ exports.default = RunLabel;
         width: "100%",
         height: "100%",
         color: _vm.nodecgTheme.text,
-        backgroundColor: "rgba(0, 0, 0, 0.6)"
+        backgroundColor: "rgba(0, 0, 0, 0.8)"
       }
     },
     [
@@ -60150,7 +60150,7 @@ exports.default = Nameplate;
         width: "100%",
         height: "100%",
         color: _vm.nodecgTheme.text,
-        backgroundColor: "rgba(0, 0, 0, 0.6)"
+        backgroundColor: "rgba(0, 0, 0, 0.8)"
       }
     },
     [
@@ -60719,7 +60719,7 @@ exports.default = RaceNameplate;
         width: "100%",
         height: "100%",
         color: _vm.nodecgTheme.text,
-        backgroundColor: "rgba(0, 0, 0, 0.6)"
+        backgroundColor: "rgba(0, 0, 0, 0.8)"
       }
     },
     [
@@ -60860,6 +60860,7 @@ exports.default = RaceNameplate;
                   staticClass: "bg",
                   style: {
                     display: "flex",
+                    flexDirection: "row-reverse",
                     justifyContent: "space-between",
                     alignItems: "flex-end",
                     width: "100%",
@@ -61108,7 +61109,7 @@ exports.default = Timer;
         width: "100%",
         height: "100%",
         color: _vm.nodecgTheme.text,
-        backgroundColor: "rgba(0, 0, 0, 0.6)",
+        backgroundColor: "rgba(0, 0, 0, 0.8)",
         padding: "20px 35px 8px"
       }
     },
@@ -61528,7 +61529,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54567" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54508" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
