@@ -8,7 +8,8 @@
     <div
       :style="{
         display: 'flex',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+      borderBottom: `2px solid ${nodecgTheme.text}`,
       }"
     >
       <div class="game">
@@ -18,7 +19,6 @@
         {{ runData.estimate }}
       </div>
     </div>
-    <long-straight-nameplate-bg></long-straight-nameplate-bg>
     <div
       :style="{
         display: 'flex',

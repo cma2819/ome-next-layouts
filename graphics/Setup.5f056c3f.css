@@ -4647,17 +4647,21 @@ readers do not read off random characters that represent icons */
 .track > span[data-v-6e9d90] {
   padding-left: 0.25em;
 }
+.bg[data-v-af0e95] {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 930px;
+  width: 1575px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .spotify[data-v-af0e95] {
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
+  display: flex;
+  justify-content: end;
 }
 .schedule[data-v-af0e95] {
-  position: absolute;
-  top: 227px;
-  left: 295px;
-  width: 1331px;
-  height: 256px;
+  padding: 100px 150px 16px;
 }
 .a[data-v-f745da],
 .b[data-v-f745da],
@@ -4683,11 +4687,12 @@ readers do not read off random characters that represent icons */
   stroke: none;
 }
 .label[data-v-4441ef] {
-  position: absolute;
   font-family: Noto Sans JP;
 }
-.data[data-v-4441ef] {
-  position: absolute;
+.panel[data-v-4441ef] {
+  padding: 8px 16px;
+  display: flex;
+  width: 100%;
 }
 .game-info > div[data-v-4441ef] {
   text-align: left;
@@ -4701,6 +4706,13 @@ readers do not read off random characters that represent icons */
 }
 .splits[data-v-4441ef] {
   padding: 0 0.25em;
+}
+.namespace[data-v-4441ef] {
+  border-bottom: 2px solid #ffffff;
+  justify-content: space-between;
+  font-size: 32px;
+  display: flex;
+  flex-direction: row;
 }
 .a[data-v-52ab5d],
 .b[data-v-52ab5d],

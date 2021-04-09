@@ -59347,7 +59347,7 @@ function (_super) {
         return team.players.flatMap(function (player) {
           return player.name;
         });
-      });
+      }).join(' , ');
     },
     enumerable: false,
     configurable: true
@@ -59367,7 +59367,7 @@ function (_super) {
         });
       }).map(function (commentator) {
         return commentator.name;
-      }).join(' / ');
+      }).join(' , ');
     },
     enumerable: false,
     configurable: true
@@ -59412,35 +59412,31 @@ exports.default = SetupScheduleComponent;
           }
         },
         [
-          _c("setup-main-bg", [
-            _c("div", [
-              _c(
-                "div",
-                {
-                  staticClass: "label",
-                  style: {
-                    fontSize: "42px",
-                    top: "-32px",
-                    left: "32px"
-                  }
-                },
-                [_vm._v("\n        次のゲーム\n      ")]
-              ),
-              _vm._v(" "),
+          _c("div", [
+            _c(
+              "div",
+              {
+                staticClass: "label",
+                style: {
+                  fontSize: "42px",
+                  fontWiehgt: "bold",
+                  color: _vm.nodecgTheme.secondary
+                }
+              },
+              [_vm._v("\n      次のゲーム\n    ")]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "panel" }, [
               _c(
                 "div",
                 {
                   staticClass: "data jp",
                   style: {
-                    display: "block",
-                    fontSize: "28px",
-                    top: "48px",
-                    left: "32px",
-                    height: "84px",
-                    width: "630px",
+                    fontSize: "36px",
                     display: "flex",
                     flexWrap: "wrap",
-                    alignItems: "center"
+                    alignItems: "center",
+                    width: "50%"
                   }
                 },
                 _vm._l(_vm.titleSplits, function(title, idx) {
@@ -59461,11 +59457,51 @@ exports.default = SetupScheduleComponent;
               _c(
                 "div",
                 {
+                  style: {
+                    width: "50%"
+                  }
+                },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "label",
+                      style: {
+                        fontSize: "32px"
+                      }
+                    },
+                    [_vm._v("\n          予定タイム\n        ")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "data en",
+                      style: {
+                        fontSize: "64px",
+                        top: "22px",
+                        left: "778px"
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n          " +
+                          _vm._s(_vm.runData.estimate) +
+                          "\n        "
+                      )
+                    ]
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "panel" }, [
+              _c(
+                "div",
+                {
                   staticClass: "data jp game-info",
                   style: {
-                    top: "142px",
-                    left: "32px",
-                    width: "256px",
+                    width: "50%",
                     fontSize: "24px",
                     display: "flex",
                     flexDirection: "column",
@@ -59480,9 +59516,8 @@ exports.default = SetupScheduleComponent;
                           style: {
                             display: "flex",
                             flexWrap: "wrap",
-                            width: "100%",
-                            borderBottom:
-                              "4px solid " + _vm.nodecgTheme.secondary
+                            width: "90%",
+                            borderBottom: "2px solid " + _vm.nodecgTheme.text
                           }
                         },
                         _vm._l(_vm.categorySplits, function(category, idx) {
@@ -59514,7 +59549,13 @@ exports.default = SetupScheduleComponent;
                         margin: "0 0.25em"
                       }
                     },
-                    [_vm._v(_vm._s(_vm.runData.system))]
+                    [
+                      _vm._v(
+                        "\n          " +
+                          _vm._s(_vm.runData.system) +
+                          "\n        "
+                      )
+                    ]
                   )
                 ]
               ),
@@ -59522,75 +59563,80 @@ exports.default = SetupScheduleComponent;
               _c(
                 "div",
                 {
-                  staticClass: "label",
                   style: {
-                    fontSize: "32px",
-                    top: "-40px",
-                    left: "758px"
-                  }
-                },
-                [_vm._v("\n        予定タイム\n      ")]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "data en",
-                  style: {
-                    fontSize: "64px",
-                    top: "22px",
-                    left: "778px"
+                    width: "50%"
                   }
                 },
                 [
-                  _vm._v(
-                    "\n        " + _vm._s(_vm.runData.estimate) + "\n      "
+                  _vm.runners
+                    ? _c("div", { staticClass: "data jp namespace" }, [
+                        _c("div", [
+                          _vm._v(
+                            "\n            " +
+                              _vm._s(_vm.runners) +
+                              "\n          "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            style: {
+                              color: _vm.nodecgTheme.secondary
+                            }
+                          },
+                          [_vm._v("\n            Runner\n          ")]
+                        )
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "data jp",
+                      style: {
+                        fontSize: "28px",
+                        top: "128px",
+                        left: "980px",
+                        height: "120px",
+                        display: "flex",
+                        justifyContent: "center",
+                        flexDirection: "column"
+                      }
+                    },
+                    [
+                      _vm.commentators
+                        ? _c("div", { staticClass: "data jp namespace" }, [
+                            _c("div", [
+                              _vm._v(
+                                "\n              " +
+                                  _vm._s(_vm.commentators) +
+                                  "\n            "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                style: {
+                                  color: _vm.nodecgTheme.secondary
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "\n              Commentator\n            "
+                                )
+                              ]
+                            )
+                          ])
+                        : _vm._e()
+                    ]
                   )
                 ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "data jp",
-                  style: {
-                    fontSize: "28px",
-                    top: "128px",
-                    left: "400px",
-                    height: "120px",
-                    display: "flex",
-                    justifyContent: "center",
-                    flexDirection: "column"
-                  }
-                },
-                _vm._l(_vm.runners, function(runner, idx) {
-                  return _c("div", { key: idx }, [
-                    _vm._v("\n          " + _vm._s(runner) + "\n        ")
-                  ])
-                }),
-                0
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "data jp",
-                  style: {
-                    fontSize: "28px",
-                    top: "128px",
-                    left: "980px",
-                    height: "120px",
-                    display: "flex",
-                    justifyContent: "center",
-                    flexDirection: "column"
-                  }
-                },
-                [_vm._v("\n        " + _vm._s(_vm.commentators) + "\n      ")]
               )
             ])
           ])
-        ],
-        1
+        ]
       )
     : _vm._e()
 }
@@ -59951,7 +59997,8 @@ exports.default = SetupScheduleComponent;
         {
           style: {
             display: "flex",
-            justifyContent: "space-between"
+            justifyContent: "space-between",
+            borderBottom: "2px solid " + _vm.nodecgTheme.text
           }
         },
         [
@@ -59964,8 +60011,6 @@ exports.default = SetupScheduleComponent;
           ])
         ]
       ),
-      _vm._v(" "),
-      _c("long-straight-nameplate-bg"),
       _vm._v(" "),
       _c(
         "div",
@@ -59998,8 +60043,7 @@ exports.default = SetupScheduleComponent;
           ])
         ]
       )
-    ],
-    1
+    ]
   )
 }
 var staticRenderFns = []
@@ -60649,10 +60693,10 @@ exports.default = App;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "spotify" }, [_c("playing-track")], 1),
+  return _c("div", { staticClass: "bg" }, [
+    _c("div", { staticClass: "schedule" }, [_c("setup-schedule")], 1),
     _vm._v(" "),
-    _c("div", { staticClass: "schedule" }, [_c("setup-schedule")], 1)
+    _c("div", { staticClass: "spotify" }, [_c("playing-track")], 1)
   ])
 }
 var staticRenderFns = []
@@ -60746,7 +60790,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61674" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54567" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

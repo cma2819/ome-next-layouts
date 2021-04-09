@@ -5,30 +5,26 @@
       color: nodecgTheme.text,
     }"
   >
-    <setup-main-bg>
-      <div>
-        <div
-          class="label"
-          :style="{
-            fontSize: '42px',
-            top: '-32px',
-            left: '32px',
-          }"
-        >
-          次のゲーム
-        </div>
+    <div>
+      <div
+        class="label"
+        :style="{
+          fontSize: '42px',
+          fontWiehgt: 'bold',
+          color: nodecgTheme.secondary,
+        }"
+      >
+        次のゲーム
+      </div>
+      <div class="panel">
         <div
           class="data jp"
           :style="{
-            display: 'block',
-            fontSize: '28px',
-            top: '48px',
-            left: '32px',
-            height: '84px',
-            width: '630px',
+            fontSize: '36px',
             display: 'flex',
             flexWrap: 'wrap',
-            alignItems: 'center'
+            alignItems: 'center',
+            width: '50%',
           }"
         >
           <div
@@ -41,12 +37,36 @@
             {{ title }}
           </div>
         </div>
+        <div
+          :style="{
+            width: '50%',
+          }"
+        >
+          <div
+            class="label"
+            :style="{
+              fontSize: '32px',
+            }"
+          >
+            予定タイム
+          </div>
+          <div
+            class="data en"
+            :style="{
+              fontSize: '64px',
+              top: '22px',
+              left: '778px',
+            }"
+          >
+            {{ runData.estimate }}
+          </div>
+        </div>
+      </div>
+      <div class="panel">
         <div 
           class="data jp game-info"
           :style="{
-            top: '142px',
-            left: '32px',
-            width: '256px',
+            width: '50%',
             fontSize: '24px',
             display: 'flex',
             flexDirection: 'column',
@@ -58,9 +78,10 @@
             :style="{
               display: 'flex',
               flexWrap: 'wrap',
-              width: '100%',
-              borderBottom: `4px solid ${nodecgTheme.secondary}`
-          }">
+              width: '90%',
+              borderBottom: `2px solid ${nodecgTheme.text}`
+            }"
+          >
             <div
               v-for="(category, idx) in categorySplits"
               :key="idx"
@@ -75,75 +96,75 @@
             :style="{
               margin: '0 0.25em'
             }"
-          >{{ runData.system }}</div>
-        </div>
-        <div
-          class="label"
-          :style="{
-            fontSize: '32px',
-            top: '-40px',
-            left: '758px',
-          }"
-        >
-          予定タイム
-        </div>
-        <div
-          class="data en"
-          :style="{
-            fontSize: '64px',
-            top: '22px',
-            left: '778px',
-          }"
-        >
-          {{ runData.estimate }}
-        </div>
-        <div
-          class="data jp"
-          :style="{
-            fontSize: '28px',
-            top: '128px',
-            left: '400px',
-            height: '120px',
-            display: 'flex',
-            justifyContent: 'center',
-            flexDirection: 'column',
-          }"
-        >
-          <div
-            v-for="(runner, idx) in runners"
-            :key="idx"
           >
-            {{ runner }}
+            {{ runData.system }}
           </div>
         </div>
         <div
-          class="data jp"
           :style="{
-            fontSize: '28px',
-            top: '128px',
-            left: '980px',
-            height: '120px',
-            display: 'flex',
-            justifyContent: 'center',
-            flexDirection: 'column',
+            width: '50%',
           }"
         >
-          {{ commentators }}
+          <div
+            v-if="runners"
+            class="data jp namespace"
+          >
+            <div>
+              {{ runners }}
+            </div>
+            <div
+              :style="{
+                color: nodecgTheme.secondary,
+              }"
+            >
+              Runner
+            </div>
+          </div>
+          <div
+            class="data jp"
+            :style="{
+              fontSize: '28px',
+              top: '128px',
+              left: '980px',
+              height: '120px',
+              display: 'flex',
+              justifyContent: 'center',
+              flexDirection: 'column',
+            }"
+          >
+            <div
+              v-if="commentators"
+              class="data jp namespace"
+            >
+              <div>
+                {{ commentators }}
+              </div>
+              <div
+                :style="{
+                  color: nodecgTheme.secondary,
+                }"
+              >
+                Commentator
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </setup-main-bg>
+    </div>
   </div>
 </template>
 
 <style scoped>
 .label {
-  position: absolute;
   font-family: Noto Sans JP;
 }
 
-.data {
-  position: absolute;
+.panel {
+  padding: 8px 16px;
+  display: flex;
+  width: 100%;
 }
+
 .game-info > div {
   text-align: left;
   padding: 4px 8px;
@@ -156,6 +177,13 @@
 }
 .splits {
   padding: 0 0.25em;
+}
+.namespace {
+  border-bottom: 2px solid #ffffff;
+  justify-content: space-between;
+  font-size: 32px;
+  display: flex;
+  flex-direction: row;
 }
 </style>
 
@@ -184,12 +212,12 @@ export default class SetupScheduleComponent extends Vue {
     return this.runData.category?.split(' ') || [];
   }
 
-  get runners(): Array<string> {
+  get runners(): string {
     return this.runData.teams.flatMap((team) => {
       return team.players.flatMap((player) => {
         return player.name;
       });
-    });
+    }).join(' , ');
   }
 
   get commentators(): string {
@@ -201,7 +229,7 @@ export default class SetupScheduleComponent extends Vue {
       return commentator.assignedRunIdArray.find(runId => runId === this.runData.externalID);
     }).map((commentator) => {
       return commentator.name;
-    }).join(' / ');
+    }).join(' , ');
   }
 
   get nodecgTheme() {

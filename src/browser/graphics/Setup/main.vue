@@ -1,27 +1,31 @@
 <template>
-  <div>
-    <div class="spotify">
-      <playing-track></playing-track>
-    </div>
+  <div class="bg">
     <div class="schedule">
       <setup-schedule></setup-schedule>
+    </div>
+    <div class="spotify">
+      <playing-track></playing-track>
     </div>
   </div>
 </template>
 
 <style scoped>
+.bg {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 930px;
+  width: 1575px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .spotify {
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
+  display: flex;
+  justify-content: end;
 }
 
 .schedule {
-  position: absolute;
-  top: 227px;
-  left: 295px;
-  width: 1331px;
-  height: 256px;
+  padding: 100px 150px 16px;
 }
 </style>
 
