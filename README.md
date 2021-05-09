@@ -1,3 +1,3 @@
-# nodecg-vue-ts-template
+# Online Marathon Eventers Layouts @ next
 
-NodeCG bundle template with Vue.ts and Vuex
+NodeCG bundle for streaming by Online Marathon Eventers.
